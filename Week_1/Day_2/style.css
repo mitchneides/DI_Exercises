@@ -1,21 +1,41 @@
-.heading {
+#top, #birthplace, #address, #contact {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 0;
+}
+
+#top {
+	margin-bottom: 3px;
+}
+
+* {
+	margin-left: 15px;
+	margin-right: 20px;
 }
 
 h1 {
 	margin-bottom: 0;
 }
 
-.personal {
-	padding-left: 80px;
+#heading {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid black;
 }
 
-hr {
-	color: black;
-	width: 85%;
-	margin-bottom: 30px;
+#Organizations {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
+#Positions {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#Descriptions {
+	margin-top: 2px;
+	margin-right: 250px;
+}
