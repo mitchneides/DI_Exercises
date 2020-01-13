@@ -1,0 +1,49 @@
+body {
+	background-color: black;
+}
+
+h1 {
+	color: white;
+	display: flex;
+	justify-content: center;
+}
+
+#grid-container {
+	display: grid;
+	grid-gap: 10px;
+	width: 50%;
+	margin: auto;
+	grid-template-areas: 
+	'red red red red red red'
+	'blue purple purple purple green green'
+	'blue yellow yellow yellow yellow yellow';
+}
+
+div {
+	border-radius: 10px;
+}
+
+#red {
+	background-color: red;
+	height: 100px;
+}
+
+#blue {
+	background-color: blue;
+	height: 100px;
+}
+
+#purple {
+	background-color: purple;
+	height: 100px;
+}
+
+#green {
+	background-color: green;
+	height: 100px;
+}
+
+#yellow {
+	background-color: yellow;
+	height: 100px;
+}
