@@ -35,7 +35,7 @@ body {
 
 img {
 	height: 300px;
-	width: 400px;
+	width: 465px;
 }
 
 #pics {
@@ -47,6 +47,11 @@ img {
 
 @media only screen and (min-width: 800px) {
 	
+	img {
+	height: 300px;
+	width: 400px;
+	}
+
 	#pics {
 		display: flex;
 		flex-wrap: wrap;
