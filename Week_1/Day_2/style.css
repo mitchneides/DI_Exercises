@@ -41,13 +41,16 @@ h1 {
 }
 
 .right {
+	width: 10%;
 	float: right;
 }
 
 .left {
+	width: 70%;
 	float: left;
 }
 
 .clear {
 	clear: both;
 }
+
