@@ -1,0 +1,79 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	color: blue;
+}
+
+section {
+	border: 5px solid red;
+}
+
+@media only screen and (min-width: 800px) {
+	/*=if screen is bigger than 800px*/
+
+	#container {
+		display: grid;
+		grid-template-areas:
+			"main main"
+			"pic about";
+		/*defines 2 columns and 2 rows*/
+		grid-gap: 5px;
+	}
+
+	#header{
+/*	id can be anything as long as it is the correct id with html file 
+Grid area must match what is defined about in grid temp area */
+		grid-area: main;
+	}
+
+	#pic {
+		grid-area: pic;
+	}
+
+	#about {
+		grid-area: about;
+	}
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+	
+	#container{
+		display: grid;
+		grid-template-areas:
+		"main pic about";
+		grid-gap: 5px;
+	}
+
+	#pic {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	img {
+		height: 200px;
+		width: 200px;
+	}
+
+	#header {
+		grid-area: main;
+	}
+
+	#pic {
+		grid-area: pic;
+	}
+
+	#about {
+		grid-area: about;
+	}
+
+	section {
+		border: 5px solid yellow;
+	}
+
+}

@@ -1,0 +1,156 @@
+body {
+	margin-top: 25px;
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+	margin: auto;
+}
+
+#calculator {
+	border: 1px solid darkgrey;
+	padding: 15px;
+	background-color: lightgrey;
+	border-radius: 15px;
+	width: 250px;
+}
+
+#solution {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: black;
+	color: white;
+	font-size: 28px;
+	margin-bottom: 9px;
+	border: 3px solid darkgrey;
+	height: 60px;
+	padding-right: 5px;
+}
+
+#buttons {
+	display: grid;
+	grid-template-areas:
+	"addi subtr multi divide"
+	"seven eight nine DEL"
+	"four five six equal"
+	"one two three equal"
+	"efes dot clear_all equal";
+	grid-gap: 5px;
+	font-size: 22px;
+}
+
+
+.cyan {
+	background-color: cyan;
+	border-bottom: 1px solid darkgrey;
+	border-right: 1px solid darkgrey;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.lightgrey {
+	background-color: #E8E8E8;
+	border-bottom: 1px solid darkgrey;
+	border-right: 1px solid darkgrey;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.red {
+	background-color: red;
+	border-bottom: 1px solid darkgrey;
+	border-right: 1px solid darkgrey;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dodgerblue {
+	background-color: dodgerblue;
+	border-bottom: 1px solid darkgrey;
+	border-right: 1px solid darkgrey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#addi {
+	grid-area: addi;
+}
+
+#subtr {
+	grid-area: subtr;
+}
+
+#multi {
+	grid-area: multi;
+}
+
+#divide {
+	grid-area: divide;
+}
+
+#seven {
+	grid-area: seven;
+}
+
+#eight {
+	grid-area: eight;
+}
+
+#nine {
+	grid-area: nine;
+}
+
+#DEL {
+	grid-area: DEL;
+}
+
+#four {
+	grid-area: four;
+}
+
+#five {
+	grid-area: five;
+}
+
+#six {
+	grid-area: six;
+}
+
+#one {
+	grid-area: one;
+}
+
+#two {
+	grid-area: two;
+}
+
+#three {
+	grid-area: three;
+}
+
+#efes {
+	grid-area: efes;
+}
+
+#dot {
+	grid-area: dot;
+}
+
+#clear_all {
+	grid-area: clear_all;
+}
+
+#equal {
+	grid-area: equal;
+}
