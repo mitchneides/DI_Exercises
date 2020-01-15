@@ -1,0 +1,18 @@
+body {
+	margin-top: 10px;
+}
+
+#quote {
+	border-left: 5px solid lightgrey;
+}
+
+#words {
+	margin-left: 10px;
+}
+
+#author {
+	padding-left: 10px;
+	margin-top: 2px;
+	color: grey;
+	font-size: 14px;
+}
