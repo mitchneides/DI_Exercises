@@ -1,0 +1,82 @@
+:root {
+	--my-limegreen: #2FC100;
+	--my-darkgreen: #2BB100;
+}
+
+#containbground {
+	background-image: url("business.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/*.overlay {
+	position: absolute;
+	min-height: 75vh;
+	min-width: 100vw;
+	background-color: rgb(244,244,244,0.9);
+}*/
+
+#containtop {
+	padding-bottom: 100px;
+	z-index: 1030;
+}
+
+.nav-item > a {
+	color: var(--my-darkgreen);
+	font-size: 18px;
+}
+
+#navigate {
+	display: flex;
+	justify-content: center;
+}
+
+h1 {
+	text-align: center;
+	padding-top: 100px;
+	color: var(--my-limegreen);
+	padding-bottom: 25px;
+}
+
+h6 {
+	text-align: center;
+	color: black;
+	padding-bottom: 10px;
+}
+
+#jobinput {
+	max-width: 350px;
+}
+
+.contain-search {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#jobinput {
+	padding-right: 5px;
+}
+
+#findbutton {
+	margin-left: 5px;
+}
+
+.limebox {
+	border: 1px solid red;
+}
+
+.toflex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.toflex > p {
+	margin-bottom: 0;
+}
+
+#greenbar {
+	background-color: var(--my-darkgreen);
+}
