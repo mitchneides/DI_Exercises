@@ -1,0 +1,25 @@
+body {
+	margin-bottom: 50px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.dismiss {
+	display: flex;
+	justify-content: center;
+}
+
+.headings {
+	margin: 15px;
+}
+
+@media screen and (min-width: 650px) {
+	.enclose {
+		display: flex;
+		justify-content: space-around;
+		margin: 0px 50px;
+	}
+}

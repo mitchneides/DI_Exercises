@@ -5,9 +5,100 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 
-	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">Components Exercise</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">About</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Contact</a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Dropdown
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	     </ul>
+
+	     <div class="login-container">
+		    <form action="/action_page.php">
+		      <input type="text" placeholder="Username" name="username">
+		      <input type="text" placeholder="Password" name="psw">
+		      <input class="btn btn-outline-success" id="loginbut" type="submit" value="Sign-in">
+		    </form>
+ 		 </div>	    
+	  </div>
+	</nav>
+	<!-- navbar ends -->
+
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4">Hello, World!</h1>
+	    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+	    <button type="button" class="btn btn-success">Learn More</button>
+	  </div>
+	</div>
+	<!-- jumbotron ends -->
+
+	<div class="dismiss">
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+	</div>
+	<!-- dismissable alert end -->
+	<div class="enclose">
+		<div class="headings" id="leftcolumn">
+			<h2>Heading 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
+			<button type="button" class="btn btn-outline-success">View Details</button>
+		</div>	
+		<div class="headings" id="centercolumn">
+				<h2>Heading 2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<button type="button" class="btn btn-outline-success">View Details</button>	
+			</div>	
+		<div class="headings" id="rightcolumn">
+				<h2>Heading 3 <span class="badge badge-primary">New</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<button type="button" class="btn btn-outline-success">View Details</button>
+			</div>
+		</div>	
+	<!-- 3 text columns end -->
+
+
 
 </body>
 </html>
+
+
+
+
+
+		
