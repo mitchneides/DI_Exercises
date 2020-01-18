@@ -67,10 +67,6 @@ h6 {
 	margin-left: 5px;
 }
 
-.limebox {
-	border: 1px solid red;
-}
-
 #greenbar {
 	background-color: var(--my-darkgreen);
 }
@@ -87,3 +83,8 @@ h6 {
 	padding-bottom: 0px;
 }
 
+@media only screen and (min-width: 770px) {
+	.col-md-2 {
+		border-right: 1px solid black;
+	}
+}
