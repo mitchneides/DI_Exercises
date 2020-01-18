@@ -3,6 +3,10 @@
 	--my-darkgreen: #2BB100;
 }
 
+body {
+	margin-bottom: 40px;
+}
+
 #containbground {
 	background-image: url("business.jpeg");
 	background-size: cover;
@@ -67,16 +71,19 @@ h6 {
 	border: 1px solid red;
 }
 
+#greenbar {
+	background-color: var(--my-darkgreen);
+}
+
 .toflex {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.toflex > p {
-	margin-bottom: 0;
+.vertspacing {
+	padding-top: 10px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
-#greenbar {
-	background-color: var(--my-darkgreen);
-}
