@@ -1,0 +1,21 @@
+.dot_border {
+	border: 1px dotted blue;
+	width: 270px;
+	height: 375px;
+}
+
+.solid_border {
+	border: 3px solid grey;
+	width: 270px;
+	height: 375px;
+}
+
+.box-grid {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.box-center {
+	text-align: center;
+}
