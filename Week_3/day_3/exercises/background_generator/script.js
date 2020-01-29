@@ -19,7 +19,6 @@ function setGradient() {
 }
 
 var button = document.createElement('button');
-console.log(button);
 button.innerText = "Generate random colors";
 button.style.color = 'white';
 button.style.backgroundColor = "rgba(0,0,0,.5)";
