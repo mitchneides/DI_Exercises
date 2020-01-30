@@ -1,0 +1,48 @@
+* {
+	font-family: 'Quattrocento', serif;
+}
+
+body {
+	background-color: #2BE7E9
+}
+
+.btn {
+  border: 1px solid #2BE7E9;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+.btn:hover {
+	border-color: black;
+}
+
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
+}
+
+.answer-btn-container {
+	display: flex;
+	/*justify-content: center;*/
+}
+
+#results {
+	border: 2px solid #f1f1f1;
+}
+
+#results:hover {
+	border-color: #666;
+}
+
+.question-container {
+	margin: 20px;
+}
+
+.question {
+	font-size: 1.6em;
+	font-weight: bold;
+}

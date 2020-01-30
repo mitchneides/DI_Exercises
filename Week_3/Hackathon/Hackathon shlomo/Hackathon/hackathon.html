@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- links -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="hackathon.css">
+	<link href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap" rel="stylesheet">
+	<title>Political Survey</title>
+</head>
+
+
+<body>
+	<!-- nav bar -->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"> <img src="https://cdn4.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_Israel_-_Circle-512.png" width="30" height="30" class="d-inline-block align-top" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="parties.html">List of Parties</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#inputGender">Start Survey</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a> -->
+    <!--     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+ <!--    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav>
+
+
+<!-- top text -->
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to your Political Survey!
+  </h1>
+  <p class="lead">We've created this survey to help people understand their political affiliation better</p>
+  <hr class="my-4">
+  <p>Let's find out where you land on the political spectrum!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#inputGender" role="button">Let's get started!</a>
+  </p>
+</div>
+<div id="overlay">
+		<!-- <h1></h1>
+		<h2></h2>
+		<div id="button_holder">
+			<button class="btn btn-lg btn-outline-primary"> <a href="#inputGender"> Let's get Started</a>
+			</button>
+		</div> -->
+</div>
+		<!-- Space in between top and bottom -->
+	<!-- 
+	<div style="height: 200px">
+	</div> -->
+
+	<!-- Personal Info form -->
+
+	<form>
+  <div class="form-row">
+  	 <div class="form-group col-lg-12">
+	      <label for="Gender">Gender</label>
+	      <select id="inputGender" class="form-control" name="gender">
+	        <option selected>Choose</option>
+	        <option>Male</option>
+	        <option>Female</option>
+	        <option>Other</option>
+	      </select>
+    </div>
+    <div class="form-group col-md-6 col-lg-12">
+	      <label for="inputAge">Age</label>
+	      <input type="text" class="form-control" name="age" id="inputAge" placeholder="Choose">
+    </div>
+    <div class="form-group col-md-6 col-lg-12">
+	      <label for="inputBirthplace">Birthplace</label>
+	      <input type="text" class="form-control" name="birthplace" id="inputBirthplace" placeholder="Choose">
+    </div>
+  </div>
+  <div class="form-group">
+	    <label for="inputCurrentCity">Current City</label>
+	    <input type="text" class="form-control" name="city" id="inputCurrentCity" placeholder="Choose">
+  </div>
+  <div class="form-group">
+    <label for="inputOccupation">Occupation</label>
+    <input type="text" class="form-control" name="job"id="inputOccupation" placeholder="Choose">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6 col-lg-12">
+      <label for="inputReligiousAffiliation">Religious Affiliation</label>
+      <input type="text" class="form-control" name="relig" id="inputReligiousAffiliation" placeholder="Choose">
+    </div>
+  </div>
+  <div class="form-group">
+  </div>
+  <!-- Submit and return info -->
+  
+  <button onclick="storeInfo()" type="button" class="btn btn-primary">Sign in</button>
+</form>
+<script src="hackathon.js"></script>
+</body>
+</html>
