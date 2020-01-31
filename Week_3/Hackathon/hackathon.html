@@ -26,7 +26,7 @@
         <a class="nav-link" href="parties.html">List of Parties</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="#inputGender">Start Survey</a>
+        <a class="nav-link" href="#pre-survey">Start Survey</a>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,11 +52,13 @@
 <div class="jumbotron">
   <h1 class="display-4">Welcome to your Political Survey!
   </h1>
-  <p class="lead">We've created this survey to help people understand their political affiliation better</p>
+  <p class="lead">Struggling to determine which party is best aligned with your values?</p>
+  <p class="lead">With only <strong>one vote</strong>, yet so many parties to choose from, we don't blame you!</p>
   <hr class="my-4">
-  <p>Let's find out where you land on the political spectrum!</p>
+  <p>We've created this site to help people better understand where they fit along the Israeli political spectrum.</p>
+  <p id="last_head_p">Let's find out where you land!</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#inputGender" role="button">Let's get started!</a>
+    <a class="btn btn-primary btn-lg" href="#pre-survey" role="button">Get started!</a>
   </p>
 </div>
 <div id="overlay">
@@ -74,6 +76,7 @@
 
 	<!-- Personal Info form -->
 
+  <p id="pre-survey">To begin the survey, please fill in the following information.<br>All information is anonymous.</p>
 	<form>
   <div class="form-row">
   	 <div class="form-group col-lg-12">
@@ -112,7 +115,8 @@
   </div>
   <!-- Submit and return info -->
   
-  <button onclick="storeInfo()" type="button" class="btn btn-primary">Sign in</button>
+  <button onclick="storeInfo()" type="button" class="btn btn-primary">Begin survey</button>
+  <a href="index_survey.html">Get to survey</a>
 </form>
 <script src="hackathon.js"></script>
 </body>

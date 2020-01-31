@@ -5,6 +5,7 @@ body{
 
 .container-fluid {
 	padding-left: 100px;
+	padding-top: 30px;
 	font-family: 'Kalam', cursive;
 
 }
@@ -12,6 +13,7 @@ body{
 	padding-top: 20px;
 	margin-top: 10px;
 	border-radius: 20px;
+	height: 460px;
 }
 
 .card-body {

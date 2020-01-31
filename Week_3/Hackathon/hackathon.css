@@ -5,6 +5,7 @@
 }
 body {
 	background-color: #2BE7E9;
+	margin-bottom: 100px;
 }
 
 /*#overlay{
@@ -35,3 +36,14 @@ form {
 	/*background-image: url(https://ae01.alicdn.com/kf/HLB1.EG_XInrK1RjSspkq6yuvXXaw/Israel-flag-3-5-feet-polyester-flag-90-150cm-big-banners-Israeli-flag-Isreal-flag-banner.jpg);*/
 	background-size: 100%;
 }
+
+#last_head_p {
+	margin-bottom: 25px;
+}
+
+#pre-survey {
+	margin-left: 150px;
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+
