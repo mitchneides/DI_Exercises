@@ -1,0 +1,13 @@
+body {
+    background-color: #2be7e9;
+    font-family: 'Quattrocento', serif;
+    background-image: url(sander-crombach-uTjrKwK6N-s-unsplash.jpg);
+    background-size:120%;
+}
+#overlay {
+	height: 100vh;
+	background-color: rgb(244,244,244,0.7);
+}
+body {
+    text-align: center;
+}

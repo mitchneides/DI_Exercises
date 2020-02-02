@@ -15,7 +15,6 @@ function add_event_listeners() {
 	}
 }
 
-
 function make_user_answer_array() {
 // called on submit survey button
 // creates array of all user's answers
@@ -27,7 +26,6 @@ function make_user_answer_array() {
 		currentQuestion = '';
 	}
 	console.log(user_answer_array);
-
 	compare_all(user_answer_array);
 
 }
@@ -48,12 +46,15 @@ function check_responses(question_name) {
 
 const parties = {
 	"likud": [-1,-1,2,-1,-2,0,2,1,-1,-2,1,-2,-1,1,-2,0,1,2,-1,1,-1,0,-2,-1,0],
-	// "kl": [1,1,1,1,1,0,0,0,0,0],
-	"joint_list": [2,2,-1,-2,-2,1,-2,0,1,-2,1,2,1,-1,-1,1,0,-2,2,2,-2,-2,2,2,2],
-	// "yamina": [2,2,2,2,2,2,2,2,2,2]
-	"test": [-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2]
+	"kl": [2,1,0,0,-2,1,1,1,-1,-1,1,2,1,-2,-2,2,1,-1,0,2,0,2,-1,1,1],
+	"yemina": [-2,-2,1,-1,-2,1,2,-1,-2,-2,1,-2,-2,-1,0,-1,0,2,-2,1,-2,-1,-2,-2,-1],
+	"joint_list": [2,2,-1,-2,-2,1,-2,0,1,-2,1,2,1,-1,1,1,0,-2,2,2,-2,-2,2,2,2],
+	"otzmah_yehudit": [-2,-2,2,1,0,0,2,1,-2,-2,1,-2,1,1,-2,-2,1,2,1,-2,0,-2,-2,1,1],
+	"shaas": [0,-2,-2,-2,-2,0,0,-2,0,-2,2,-1,-2,1,1,1,-2,0,-2,2,-2,-2,-1,-2,-2],
+	"haavodah_meretz": [2,2,-2,1,0,2,-1,1,1,-2,1,2,2,-2,-1,2,-1,-2,2,2,1,2,2,2,2],
+	"israel_beitenu": [2,2,1,0,-2,1,2,2,-1,0,1,-1,2,0,-1,0,0,1,2,1,1,2,-2,2,2],
 }
-// object holds answer array for each party
+//object holds answer array for each party
 
 
 let comparisons = {}
@@ -63,6 +64,8 @@ let scores = {}
 // CHECK IF USED
 let every_party_final_score = [];
 // array holding the score for matches with each party
+let comparison_array = []
+
 
 function compare_all(user_answers){	
 // loops through parties object and compares it with the user's answers
@@ -72,25 +75,9 @@ function compare_all(user_answers){
 	}
 }
 
-
-
-// ////////////////////////////////////////
-
-
-// function make_comparison(user_answers, pre_set){
-// // fills comparison array with x's and o's
-// 	let comparison_array = []
-// 	for (let i = 0; i <= user_answers.length -1; i++){
-// 		value = (user_answers[i] == pre_set[i] ? "X" : "O")
-// 		comparison_array[i] = value;
-// 	}
-// 	score_all(comparison_array);
-// }
-
-
 function make_comparison(user_answers, pre_set){
 // fills comparison array with x's, y's and o's
-	let comparison_array = []
+	// let comparison_array = []
 	for (let i = 0; i <= user_answers.length-1; i++){
 		if (user_answers[i] == pre_set[i]) {
 			value = "X";
@@ -109,7 +96,6 @@ function make_comparison(user_answers, pre_set){
 	score_all(comparison_array);
 }
 
-
 function score_all(comparisons){
 // loops through all comparisons, counts # of x's for each array and gives amnt
 	var score = 0;
@@ -127,27 +113,6 @@ function score_all(comparisons){
 	get_score(every_party_final_score);
 }
 
-
-// function score_all(comparisons){
-// // loops through all comparisons, counts # of x's for each array and gives amnt
-// 	var score = 0;
-// 	let keys = Object.keys(comparisons)
-// 	for(key of keys){
-// 		if (comparisons[key] == 'X') {
-// 			score++;
-// 		}
-// 	}
-// 	every_party_final_score.push(score);
-// 	console.log('every_party_final_score: ' +every_party_final_score);
-// 	get_score(every_party_final_score);
-// }
-
-
-
-// //////////////////////////////////////////////
-
-
-
 function get_score(final_scores_array){
 // looks in every_party_final_score and decides which party has the highest score
 // every_party_final_score is arranged in same order as the list of parties
@@ -160,51 +125,23 @@ function get_score(final_scores_array){
         }
     }
     console.log('max is at index: '+maxIndex);
-    get_winner_party_name(maxIndex);
+    if (final_scores_array.length == 8) {
+    	get_winner_party_name(maxIndex);
+    return maxIndex;
+    }   
 }
 
 function get_winner_party_name(index) {
 	let keys = Object.keys(parties)
 	winner = keys[index];
 	console.log('Winning party is: '+winner);
+	// alert('Winning party is: '+winner);
 	return winner;
 }
 
 
-
-
-
-
-//    ///// old  ///////
-// function check_radio_question(radio_name){
-// 	var radios = document.getElementsByName(radio_name);
-// 	for (radio of radios) {
-// 		if (radio.checked) {
-// 			return radio.value;
-// 		}
-// 	}
-// }
-
-// var answerArray = [];
-// function makeAnswerArray() {
-// 	for(var i=1; i<6; i++) {
-// 		var currentQuestion = 'q'+i;
-// 		var answer = check_radio_question(currentQuestion);
-// 		answerArray.push(answer);
-// 		currentQuestion = '';
-// 	}
-// 	console.log(answerArray);
-// 	//this array will be compared against the party arrays
-// 	var userScore = 0;
-//  	for(var j=1; j<6; j++) {
-//  		var currentQuestion_score = 'q'+j;
-//  		var answer_score = check_radio_question(currentQuestion_score);
-//  		userScore = userScore + Number(answer_score);
-//  		currentQuestion_score = '';
-//  	}
-//  	console.log('score: '+userScore/5);
-//  	//displays where user falls on a scale of -2 to 2 (liberal to conservative)
-
-//  	answerArray = [];
-//  	//if button is pressed multiple times, array won't contain multiples of the data
+// function print_winner_to_results_page() {
+// 	the_winner = get_winner_party_name(maxIndex);
+// 	document.getElementById("winning-answer").innerText = 'Winning party is: '+the_winner;
+	
 // }
