@@ -1,19 +1,18 @@
 body{
 	background-image: url(sander-crombach-uTjrKwK6N-s-unsplash.jpg);
 	background-size:120%;
+	font-family: 'Quattrocento', serif;
 }
 
 .container-fluid {
 	padding-left: 100px;
 	padding-top: 30px;
-	font-family: 'Kalam', cursive;
-
 }
 .card {
 	padding-top: 20px;
 	margin-top: 10px;
 	border-radius: 20px;
-	height: 460px;
+	height: 560px;
 }
 
 .card-body {
@@ -40,7 +39,12 @@ p {
 }
 h1 {
 	text-align: center;
-	font-family: 'Kalam', cursive;
+	font-family: 'Quattrocento', serif; 
 	font-size: 3em;
 
+}
+h5 {
+	font-weight: bold;
+	border-bottom: #2be7e9 solid 2px;
+	text-align: center;
 }

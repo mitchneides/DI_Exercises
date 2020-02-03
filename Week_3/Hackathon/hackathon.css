@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: #2BE7E9;
+	background: linear-gradient(to right, rgb(215, 215, 215), rgb(0, 128, 255));
 	margin-bottom: 100px;
 }
 
@@ -33,8 +33,9 @@ form {
 }
 .jumbotron{
 	text-align: center;
-	/*background-image: url(https://ae01.alicdn.com/kf/HLB1.EG_XInrK1RjSspkq6yuvXXaw/Israel-flag-3-5-feet-polyester-flag-90-150cm-big-banners-Israeli-flag-Isreal-flag-banner.jpg);*/
-	background-size: 100%;
+	background-size: 100vw;
+	display: fixed;
+	background-image: url(https://nocamels.com/wp-content/uploads/2015/03/Voting-ballot-box-israel-1024x696.jpg);
 }
 
 #last_head_p {
@@ -47,3 +48,6 @@ form {
 	margin-bottom: 30px;
 }
 
+#begin {
+	color: white;
+}

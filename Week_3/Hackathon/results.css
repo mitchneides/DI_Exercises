@@ -3,11 +3,19 @@ body {
     font-family: 'Quattrocento', serif;
     background-image: url(sander-crombach-uTjrKwK6N-s-unsplash.jpg);
     background-size:120%;
+    text-align: center;
 }
 #overlay {
 	height: 100vh;
 	background-color: rgb(244,244,244,0.7);
 }
-body {
-    text-align: center;
+
+#winning-answer {
+	font-weight: bold;
+	font-size: 4em;
+
+}
+
+#party-link {
+	font-size: 1.5em;
 }

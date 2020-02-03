@@ -45,14 +45,14 @@ function check_responses(question_name) {
 // ///////////////////////////////////////////
 
 const parties = {
-	"likud": [-1,-1,2,-1,-2,0,2,1,-1,-2,1,-2,-1,1,-2,0,1,2,-1,1,-1,0,-2,-1,0],
-	"kl": [2,1,0,0,-2,1,1,1,-1,-1,1,2,1,-2,-2,2,1,-1,0,2,0,2,-1,1,1],
-	"yemina": [-2,-2,1,-1,-2,1,2,-1,-2,-2,1,-2,-2,-1,0,-1,0,2,-2,1,-2,-1,-2,-2,-1],
-	"joint_list": [2,2,-1,-2,-2,1,-2,0,1,-2,1,2,1,-1,1,1,0,-2,2,2,-2,-2,2,2,2],
-	"otzmah_yehudit": [-2,-2,2,1,0,0,2,1,-2,-2,1,-2,1,1,-2,-2,1,2,1,-2,0,-2,-2,1,1],
-	"shaas": [0,-2,-2,-2,-2,0,0,-2,0,-2,2,-1,-2,1,1,1,-2,0,-2,2,-2,-2,-1,-2,-2],
-	"haavodah_meretz": [2,2,-2,1,0,2,-1,1,1,-2,1,2,2,-2,-1,2,-1,-2,2,2,1,2,2,2,2],
-	"israel_beitenu": [2,2,1,0,-2,1,2,2,-1,0,1,-1,2,0,-1,0,0,1,2,1,1,2,-2,2,2],
+	"Likud": [-1,-1,2,-1,-2,0,2,1,-1,-2,1,-2,-1,1,-2,0,1,2,-1,1,-1,0,-2,-1,0],
+	"Kachol Lavan": [2,1,0,0,-2,1,1,1,-1,-1,1,2,1,-2,-2,2,1,-1,0,2,0,2,-1,1,1],
+	"Yemina": [-2,-2,1,-1,-2,1,2,-1,-2,-2,1,-2,-2,-1,0,-1,0,2,-2,1,-2,-1,-2,-2,-1],
+	"Joint List": [2,2,-1,-2,-2,1,-2,0,1,-2,1,2,1,-1,1,1,0,-2,2,2,-2,-2,2,2,2],
+	"Otzmah Yehudit": [-2,-2,2,1,0,0,2,1,-2,-2,1,-2,1,1,-2,-2,1,2,1,-2,0,-2,-2,1,1],
+	"Shas": [0,-2,-2,-2,-2,0,0,-2,0,-2,2,-1,-2,1,1,1,-2,0,-2,2,-2,-2,-1,-2,-2],
+	"Haavodah/Meretz": [2,2,-2,1,0,2,-1,1,1,-2,1,2,2,-2,-1,2,-1,-2,2,2,1,2,2,2,2],
+	"Israel Beitenu": [2,2,1,0,-2,1,2,2,-1,0,1,-1,2,0,-1,0,0,1,2,1,1,2,-2,2,2],
 }
 //object holds answer array for each party
 
@@ -133,15 +133,17 @@ function get_score(final_scores_array){
 
 function get_winner_party_name(index) {
 	let keys = Object.keys(parties)
-	winner = keys[index];
+	var winner = keys[index];
+	sessionStorage.setItem("Winner",winner);
 	console.log('Winning party is: '+winner);
 	// alert('Winning party is: '+winner);
+	document.getElementById("winning-answer").textNode(winner);
 	return winner;
 }
 
 
-// function print_winner_to_results_page() {
-// 	the_winner = get_winner_party_name(maxIndex);
-// 	document.getElementById("winning-answer").innerText = 'Winning party is: '+the_winner;
-	
-// }
+function print_winner_to_results_page() {
+	console.log(sessionStorage.getItem("Winner"));
+	document.getElementById('winning-answer').innerText = sessionStorage.getItem("Winner");
+}
+print_winner_to_results_page();
