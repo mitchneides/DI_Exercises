@@ -42,8 +42,6 @@ function check_responses(question_name) {
 	}
 }
 
-// ///////////////////////////////////////////
-
 const parties = {
 	"Likud": [-1,-1,2,-1,-2,0,2,1,-1,-2,1,-2,-1,1,-2,0,1,2,-1,1,-1,0,-2,-1,0],
 	"Kachol Lavan": [2,1,0,0,-2,1,1,1,-1,-1,1,2,1,-2,-2,2,1,-1,0,2,0,2,-1,1,1],
@@ -56,7 +54,6 @@ const parties = {
 }
 //object holds answer array for each party
 
-
 let comparisons = {}
 // object to be filled with arrays for comparison of each political party
 // to be filled with x's(match) and o's(non-match)
@@ -65,7 +62,6 @@ let scores = {}
 let every_party_final_score = [];
 // array holding the score for matches with each party
 let comparison_array = []
-
 
 function compare_all(user_answers){	
 // loops through parties object and compares it with the user's answers
