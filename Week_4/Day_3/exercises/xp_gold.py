@@ -61,9 +61,98 @@
 #
 # insert(item,spot)
 
-# 5
+# 5 link does not exist
 
+# 6
+# star = '*'
+# space = ' '
+# i = 1
+# j=[4,3,2,1,0]
+# for item in j:
+#     print(space*item + star*i)
+#     i+=1
 
+# 7
+# total = 0
+# while True:
+#     age = input("Enter your age, or 'c' to checkout: ")
+#     if age == 'c':
+#         print(f"Your total is ${total}")
+#         break
+#     age = int(age)
+#     if age<3:
+#         print("Your ticket is free!")
+#     elif 3<=age<=12:
+#         total = total+10
+#         print("Your ticket costs $10.")
+#     else:
+#         total = total + 15
+#         print("Your ticket costs $15.")
 
+# 8
+# l = [0,1,2,3,4,5,6,7,8,9,10]
+# i=0
+# while i<len(l)-1:
+#     if l[i]%2 == 0:
+#         print(l[i])
+#     i+=1
 
+# 9
+# allowed = []
+# while True:
+#     name = input("Enter your name, or f to finish: ")
+#     if name == 'f':
+#         break
+#     age = int(input("Enter your age: "))
+#     if 16<=age<=21:
+#         print("You may enter the movie.")
+#         allowed.append(name)
+#     else:
+#         print("You gotta go home bud.")
+#
+# print(allowed)
 
+# 10
+# l = ['dan','steve','ariel','bar']
+# newL = []
+# for name in l:
+#     age = int(input(f"Enter {name}'s age: "))
+#     if age>=16:
+#         newL.append(name)
+# print(newL)
+
+# 11
+# x = 1500
+# l = []
+# while x<2701:
+#     if x%7 == 0 and x%5 ==0:
+#         l.append(x)
+#     x+=1
+# print(l)
+
+# 12
+# str = 'kajsdf asdfasdkjh asdfasdf alsdkjfhalse we ea fasdf'
+# count = 0
+# for letter in str:
+#     if letter == ' ':
+#         count+=1
+# print(count)
+
+# 13
+# str = 'kajsdf asdfasdkjh asdfasdf alsdkjfhalse we ea fasdf'
+# l = list(str.split())
+# print(len(l))
+
+# 14
+count_up = 0
+count_low = 0
+
+str = 'kajLKJSDsdf asdSSfasdSESkjh asdfSFAasdf alsdkjfASDhalse we eAa fasdf'
+for letter in str:
+    if letter.isupper():
+        count_up+=1
+    elif letter.islower():
+        count_low+=1
+
+print(f"Upper: {count_up}")
+print(f"Lower: {count_low}")
