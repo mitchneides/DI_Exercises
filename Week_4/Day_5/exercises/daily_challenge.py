@@ -33,4 +33,4 @@ def dec_to_binary(decimal):
     return answer
 
 
-dec_to_binary(676)
+dec_to_binary(9)
