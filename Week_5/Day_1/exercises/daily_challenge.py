@@ -25,36 +25,27 @@
 # mySubset.getSubsets()
 
 
-class Subsets:
-    def __init__(self, list):
-        self.list = list
-
-    def GetToZero(self):
-        answers = []
-        self.list.sort()
-        for i in range(len(self.list) - 2):
-            if i > 0 and self.list[i] == self.list[i - 1]:
-                continue
-            j = i + 1
-            k = len(self.list) - 1
-            while j < k:
-                sum = self.list[i] + self.list[j] + self.list[k]
-                if sum > 0:
-                    k -= 1
-                elif sum < 0:
-                    j += 1
-                else:
-                    answers.append([self.list[i], self.list[j], self.list[k]])
-                    while j < k and self.list[j] == self.list[j + 1]:
-                        j += 1
-                        while j < k and self.list[k] == self.list[k - 1]:
-                            k -= 1
-                            j += 1
-                            k -= 1
-                        print(answers)
-                        return answers
 
 
-l = [-25, -10, -7, -3, 2, 4, 8, 10]
-mySubset = Subsets(l)
-mySubset.GetToZero()
+
+def GetToZero(l):
+
+    l_len = len(l)
+    found = False
+    for i in range(0, l_len - 2):
+        for j in range(i + 1, l_len - 1):
+            for k in range(j + 1, l_len):
+                if (l[i] + l[j] + l[k] == 0):
+                    print([l[i], l[j], l[k]])
+                    found = True
+
+    if (found == False):
+        print("No triplet combinations add to 0")
+
+
+if __name__ == '__main__':
+    list1 = [-25, -10, -7, -3, 2, 4, 8, 10]
+    GetToZero(list1)
+
+
+
