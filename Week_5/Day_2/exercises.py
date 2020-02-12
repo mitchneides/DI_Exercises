@@ -113,124 +113,184 @@
 
 # 3
 
-class Account:
-    def __init__(self, account_owner, balance):
-        self.account_owner = account_owner
-        self.balance = balance
+# class Account:
+#     def __init__(self, account_owner, balance):
+#         self.account_owner = account_owner
+#         self.balance = balance
+#
+#         self.details_dict = {self.account_owner: self.balance}
+#
+#
+# class Owner(Account):
+#     def __init__(self, account_owner, balance, card_num, pw):
+#         super().__init__(account_owner, balance)
+#         self.card_num = card_num
+#         self.pw = pw
+#         # self.account_numbers.append([card_num])
+#
+#     def get_balance(self):
+#         print(f"Current balance: ${self.balance}")
+#         return self.balance
+#
+#     def withdraw(self):
+#         while True:
+#             amount = int(input("Enter amount you wish to withdraw: $"))
+#             if amount > self.balance:
+#                 print(f"You do not have ${amount} in your account to withdraw. Try again.")
+#                 continue
+#             elif amount < 0:
+#                 print(f"You must enter a valid withdrawal amount. Try again.")
+#                 continue
+#             else:
+#                 self.balance -= amount
+#                 print(f"Successful withdrawal of ${amount}. Your new balance is ${self.balance}")
+#
+#             again = input("Enter 1 to make another withdrawal, or 2 to exit: ")
+#             if again == "1":
+#                 continue
+#             else:
+#                 break
+#
+#     def deposit(self):
+#         while True:
+#             amount = int(input("Enter amount you wish to deposit: $"))
+#             if amount < 0:
+#                 print(f"You must enter a valid deposit amount. Try again.")
+#                 continue
+#             else:
+#                 self.balance += amount
+#                 print(f"Successful deposit of ${amount}. Your new balance is ${self.balance}")
+#
+#             again = input("Enter 1 to make another deposit, or 2 to exit: ")
+#             if again == "1":
+#                 continue
+#             else:
+#                 break
+#     def choose_action(self):
+#         action = input("Enter 1 for withdrawal, 2 for deposit, 3 to get balance: ")
+#         if action == '1':
+#             self.withdraw()
+#         elif action == '2':
+#             self.deposit()
+#         elif action == '3':
+#             self.get_balance()
+#         else:
+#             print("Invalid entry. Goodbye.")
+#
+#     def check_owner_info(self):
+#         in_card_num = int(input("Enter your card number: "))
+#         in_pword = input("Enter your password: ")
+#         trial = 1
+#         while trial < 3:
+#             if in_card_num == self.card_num and in_pword == self.pw:
+#                 self.choose_action()
+#                 break
+#             else:
+#                 print("Card number or password incorrect.")
+#                 trial += 1
+#                 continue
+#         if trial == 3:
+#             print("Too many attempts. Your card has been destroyed.")
+#             self.card_num = None
+#
+#
+# class Bank:
+#     def __init__(self, bank_name):
+#         self.bank_name = bank_name
+#         self.owners = []
+#
+#     def create_account(self, account_owner, balance, card_num, pw):
+#         if len(self.owners) < 10:
+#             owner = Owner(account_owner, balance, card_num, pw)
+#             self.owners.append(owner)
+#             return owner
+#
+#         else:
+#             print(f"There are already 10 accounts in {self.bank_name} bank.")
+#             print("Please try again later.")
+#
+#     def get_bank_balance(self):
+#         total_in_bank = 0
+#         for item in self.owners:
+#             total_in_bank += item.balance
+#         print(f"Total amount of money in bank: ${total_in_bank}")
+#         return total_in_bank
+#
+#
+#
+# if __name__ == '__main__':
+#     bank = Bank("Huntington")
+#     mitch1 = bank.create_account("Mitch1",1000,123,'pw123')
+#     mitch2 = bank.create_account("Mitch2",999,456,'pw456')
+#     # mitch3 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch4 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch5 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch6 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch7 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch8 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch9 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch10 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch11 = bank.create_account("Mitch",1000,123,'pw123')
+#     # mitch10.check_owner_info()
+#     mitch1.deposit()
+#     bank.get_bank_balance()
 
-        self.details_dict = {self.account_owner: self.balance}
 
+# with Yair:
 
-class Owner(Account):
-    def __init__(self, account_owner, balance, card_num, pw):
-        super().__init__(account_owner, balance)
-        self.card_num = card_num
-        self.pw = pw
-        # self.account_numbers.append([card_num])
+class Family:
 
-    def get_balance(self):
-        print(f"Current balance: ${self.balance}")
-        return self.balance
+    def __init__(self, members, last_name):
+        self.members = members
+        self.last_name = last_name
 
-    def withdraw(self):
-        while True:
-            amount = int(input("Enter amount you wish to withdraw: $"))
-            if amount > self.balance:
-                print(f"You do not have ${amount} in your account to withdraw. Try again.")
-                continue
-            elif amount < 0:
-                print(f"You must enter a valid withdrawal amount. Try again.")
-                continue
-            else:
-                self.balance -= amount
-                print(f"Successful withdrawal of ${amount}. Your new balance is ${self.balance}")
+    def born(self, **kwargs):
+        self.members[kwargs['name']] = kwargs
+        print(f"Mazal tov for the birth of {kwargs.get('name')}!")
 
-            again = input("Enter 1 to make another withdrawal, or 2 to exit: ")
-            if again == "1":
-                continue
-            else:
-                break
-
-    def deposit(self):
-        while True:
-            amount = int(input("Enter amount you wish to deposit: $"))
-            if amount < 0:
-                print(f"You must enter a valid deposit amount. Try again.")
-                continue
-            else:
-                self.balance += amount
-                print(f"Successful deposit of ${amount}. Your new balance is ${self.balance}")
-
-            again = input("Enter 1 to make another deposit, or 2 to exit: ")
-            if again == "1":
-                continue
-            else:
-                break
-    def choose_action(self):
-        action = input("Enter 1 for withdrawal, 2 for deposit, 3 to get balance: ")
-        if action == '1':
-            self.withdraw()
-        elif action == '2':
-            self.deposit()
-        elif action == '3':
-            self.get_balance()
+    def is_18(self, name):
+        if self.members.get(
+                name):  # use .get() because it will not crash the function with an error if name is not found. Instead will just return None
+            member = self.members.get(name)
+            return member['age'] >= 18
         else:
-            print("Invalid entry. Goodbye.")
+            raise KeyError(f"{name} is not in the family.")  # creates an error with custom message
 
-    def check_owner_info(self):
-        in_card_num = int(input("Enter your card number: "))
-        in_pword = input("Enter your password: ")
-        trial = 1
-        while trial < 3:
-            if in_card_num == self.card_num and in_pword == self.pw:
-                self.choose_action()
-                break
+
+class Incredibles(Family):
+
+    def use_power(self, name):
+        member = self.members.get(name)
+        if member:
+            power = member.get('power')
+            if self.is_18(name):
+                print(f"{name} uses {power}!")
             else:
-                print("Card number or password incorrect.")
-                trial += 1
-                continue
-        if trial == 3:
-            print("Too many attempts. Your card has been destroyed.")
-            self.card_num = None
-
-
-class Bank:
-    def __init__(self, bank_name):
-        self.bank_name = bank_name
-        self.owners = []
-
-    def create_account(self, account_owner, balance, card_num, pw):
-        if len(self.owners) < 10:
-            owner = Owner(account_owner, balance, card_num, pw)
-            self.owners.append(owner)
-            return owner
+                raise Exception(f"{name} is not old enough to fight evil.")
 
         else:
-            print(f"There are already 10 accounts in {self.bank_name} bank.")
-            print("Please try again later.")
-
-    def get_bank_balance(self):
-        total_in_bank = 0
-        for item in self.owners:
-            total_in_bank += item.balance
-        print(f"Total amount of money in bank: ${total_in_bank}")
-        return total_in_bank
-
+            raise KeyError(f"{name} is not in the family.")
 
 
 if __name__ == '__main__':
-    bank = Bank("Huntington")
-    mitch1 = bank.create_account("Mitch1",1000,123,'pw123')
-    mitch2 = bank.create_account("Mitch2",999,456,'pw456')
-    # mitch3 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch4 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch5 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch6 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch7 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch8 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch9 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch10 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch11 = bank.create_account("Mitch",1000,123,'pw123')
-    # mitch10.check_owner_info()
-    mitch1.deposit()
-    bank.get_bank_balance()
+    fam_dic = {
+        'Michael': {'name': 'Michael', 'age': 35, 'sex': "Male", 'is_child': False, 'incredible_name': "Super Baby Jack", 'power':"Superstrength"},
+        'Sarah': {'name': 'Sarah', 'age': 32, 'sex': "Female", 'is_child': False, 'incredible_name': "Super Baby Jack", 'power':"Flexibility"},
+        'Kevin': {'name': 'Kevin', 'age': 16, 'sex': "Male", 'is_child': True, 'incredible_name': "Super Baby Jack", 'power':"Fire"}
+    }
+    # family = Family(fam_dic, "Cohen")
+    # print(family.members)
+    #
+    # zach = {'name': "Zach", 'age': 0, 'sex': 'Male', 'is_child': True, 'eye_color': 'blue', 'hair_color': 'brown'}
+    # family.born(**zach)
+    # print(family.members)
+    #
+    # print(family.is_18('Zach'))
+
+    inc = Incredibles(fam_dic, "Smith")
+    jack = {'name': "Jack", 'age': 0, 'sex': "Male", "is_child": True, "incredible_name": "Super Baby Jack", 'power': "Unknown"}
+    inc.born(**jack)
+
+    print(inc.members)
+    inc.use_power('Michael')
+    inc.use_power('Kevin')

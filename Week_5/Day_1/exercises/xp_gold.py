@@ -55,34 +55,42 @@ import random
 #     l1.gen_rand_list()
 
 
-class QuantumParticle:
-    def __init__(self, position, momentum, spin):
-        self.position = position
-        self.momentum = momentum
-        self.spin = spin
+# class QuantumParticle:
+#     def __init__(self, position, momentum, spin):
+#         self.position = position
+#         self.momentum = momentum
+#         self.spin = spin
+#
+#     def measure_position(self):
+#         pos = random.randint(1,100)
+#
+#         return pos
+#
+#     def measure_momentum(self):
+#         moment = random.uniform(1,100)
+#         return moment
+#
+#     def measure_spin(self):
+#         choice = random.randint(0,1)
+#         if choice == 0:
+#             s = 0.5
+#         else:
+#             s = -0.5
+#         return s
+#
+#
+#
+#
+# if __name__ == '__main__':
+#     q = QuantumParticle(2,2,0.5)
+#     print(q.measure_momentum())
+#     print(q.measure_position())
+#     print(q.measure_spin())
 
-    def measure_position(self):
-        pos = random.randint(1,100)
-
-        return pos
-
-    def measure_momentum(self):
-        moment = random.uniform(1,100)
-        return moment
-
-    def measure_spin(self):
-        choice = random.randint(0,1)
-        if choice == 0:
-            s = 0.5
-        else:
-            s = -0.5
-        return s
 
 
 
 
-if __name__ == '__main__':
-    q = QuantumParticle(2,2,0.5)
-    print(q.measure_momentum())
-    print(q.measure_position())
-    print(q.measure_spin())
+
+
+
