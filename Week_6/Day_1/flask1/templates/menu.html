@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+    <h1>DI Pizza</h1>
+    <p>Welcome {{ name }}</p>
+    {% if items|length > 0 %}
+    <ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+</body>
+</html>
