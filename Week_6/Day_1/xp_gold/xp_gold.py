@@ -1,15 +1,15 @@
 from flask import Flask
-from datetime import date
+import datetime
 import random
 
 app = Flask(__name__)
 
 @app.route('/countdown')
 def countdown():
-    target_date = date(2021,1,1)
-    current_date = date.today()
+    target_date = datetime.datetime(2021,1,1,1,1,1,1)
+    current_date = datetime.datetime.now()
     diff = target_date - current_date
-    return f"Until 1/1/2020: {str(diff)}"
+    return f"Until 1/1/2020: {diff}"
 
 @app.route('/guess-num/<user_num>')
 def guess_num(user_num):
@@ -21,10 +21,10 @@ def guess_num(user_num):
 
 @app.route('/birthday')
 def bday_countdown():
-    bday = date(2020,11,6)
-    current_date = date.today()
+    bday = datetime.datetime(2020,11,6,1,1,1,1)
+    current_date = datetime.datetime.now()
     diff = bday - current_date
-    return f"Days until bday: {str(diff)}"
+    return f"Days until bday: {diff}"
 
 
 
