@@ -1,0 +1,27 @@
+[
+    {
+        "name": "iphone 9",
+        "price": 799,
+        "instock": true
+    },
+    {
+        "name": "Macbook Pro",
+        "price": 4799,
+        "instock": false
+    },
+    {
+        "name": "Apple Watch",
+        "price": 10799,
+        "instock": true
+    },
+    {
+        "name": "Apple stand pro",
+        "price": 99999,
+        "instock": true
+    },
+    {
+        "name": "Android Phone",
+        "price": 699,
+        "instock": true
+    }
+]

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ product['Name'] }} - Electric Bugaloo</title>
+{% endblock %}
+
+{% block content %}
+<br>
+<h1>{{ product['Name'] }}</h1>
+<br>
+
+{% for key in product %}
+    {% if key['Quantity'] != 0 %}
+        <h4>{{ key }}: {{ product[key] }}</h4>
+    {% endif %}
+{% endfor %}
+<br>
+<a class="btn btn-primary" href="http://127.0.0.1:5000/" role="button">Return home</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Storey</title>
+{% endblock %}
+
+{%  block content %}
+    <br>
+    <h1>Welcome to We're Storey</h1>
+    <p>This is from the home content block</p>
+    <button class="btn btn-primary">Click me</button>
+
+    {% for item in products %}
+        {% if item['instock'] == True %}
+            <h1>{{ item['name'] }}</h1>
+            <p>${{ item['price'] }}</p>
+        {% endif %}
+    {% endfor %}
+
+{%  endblock %}
+
