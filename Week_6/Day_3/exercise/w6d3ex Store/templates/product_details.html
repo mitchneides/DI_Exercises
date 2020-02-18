@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Product Details!</h1>
+    <br>
+
+    <h2>{{ product['name'] }}</h2>
+    <img src="{{ url_for('static', filename='images/products/' + product['image']) }}">
+
+    {% if product['stock'] > 0 %}
+        <p>Qty: {{ product['stock'] }}</p>
+        <p>Price: CAD ${{product['price']}}.00</p>
+        <a href="/buy/{{product['id']}}"><button class="btn btn-success">Buy</button></a>
+    {% else %}
+        <p>Qty: Out of stock</p>
+        <button disabled class="btn btn-success">Buy</button>
+    {% endif %}
+    <a href="/products">Back to Products</a>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

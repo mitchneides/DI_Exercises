@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Here's all our shit:</h1>
+    <br>
+
+    {% for product in products %}
+    <a href="/product_details/{{ product['id'] }}"><h3>-{{product['name']}}</h3></a>
+        {% if product['stock'] > 0 %}
+            <p>Qty: {{product['stock']}}</p>
+            <p>Price: CAD ${{product['price']}}.00</p>
+            <br>
+        {% else %}
+            <p>Out of stock</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

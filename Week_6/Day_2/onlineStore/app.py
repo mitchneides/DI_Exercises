@@ -6,6 +6,7 @@ from Week_6.Day_2.onlineStore import db
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 @app.route('/greeting')
 def greeting():
@@ -38,6 +39,33 @@ def products(): #CONTROLLER
 def product_details(product):
     html_product_details = render_template('product_details.html')
     return html_product_details
+
+
+from flask import request
+from Week_6.Day_2.onlineStore.forms import *
+
+@app.route('/login', methods=('GET', 'POST'))
+def login():
+    login_form = LoginForm()
+
+    if request.method == 'GET':
+        return render_template('loginForm.html', form=login_form)
+
+    if request.method == 'POST' and login_form.validate():
+        name = login_form.name.data
+        password = login_form.password.data
+        info = login_form.info.data
+
+        if name == "Jonathan" and password == "horse":
+            return '<h1>Welcome Jon</h1>'
+
+        else:
+            return "<h1>Access denied</h1>"
+
+    else:
+        return "<h1>Failed Validation</h1>"
+
+
 
 
 
