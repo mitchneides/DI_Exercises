@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/cart_style.css') }}">
+
+
+    <br>
+    <h1>Shopping Cart</h1>
+    <br>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+        {% for item in cart %}
+            <tr><td>{{ item['name'] }}</td><td>{{ item['price'] }}.00</td></tr>
+        {% endfor %}
+        <tr>
+            <th>Total</th>
+            <th>CAD ${{ balance }}.00</th>
+        </tr>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/product.css') }}">
+
+    <h1>{{ product['product'] }}</h1>
+    <img src="{{ url_for('static', filename='images/products/' + product['image']) }}">
+
+    <div id="info-wrap">
+        {% if product['size'] %}
+        <h5 class="short-info">Size: {{ product['size'] }}</h5>
+        {% endif %}
+        <h5 class="short-info">Condition: {{ product['condition'] }}</h5>
+        <h5 class="short-info">Note from seller: {{ product['description'] }}</h5>
+        <h5 class="short-info">Price: NIS {{ product['price'] }}</h5>
+        <h5 class="short-info">Qty Available: {{ product['qty'] }}</h5>
+    </div>
+
+    <a class="waves-effect waves-light btn bottom" style="background-color: #e57373" href="/market">Return to market</a>
+    <a class="waves-effect waves-light btn bottom" style="background-color: #e57373">Add to cart</a>
+
+
+{% endblock %}

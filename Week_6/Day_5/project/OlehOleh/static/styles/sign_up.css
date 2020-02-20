@@ -1,0 +1,28 @@
+
+#sign_up {
+	display: flex;
+	justify-content: center;
+}
+
+.card-panel {
+    margin-top: 60px;
+}
+
+#submit {
+    box-shadow: 0px 10px 14px -7px #026C85;
+	background:linear-gradient(to bottom, #0391B2 5%, #026C85 100%);
+	border-radius:4px;
+	border:1px solid #026C85;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #026C85;
+}
+
+
+
