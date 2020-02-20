@@ -57,3 +57,14 @@ def update_db(products, src_file='my_file.json'):
     with open(src_file, 'w') as f:
         json.dump(products, f)
 
+
+def get_max_id():
+    products = load_database()
+    max_id = 0
+    for product in products:
+        id = product['id']
+        if id > max_id:
+            max_id = id
+    return max_id
+
+

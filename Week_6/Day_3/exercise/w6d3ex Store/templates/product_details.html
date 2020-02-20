@@ -2,10 +2,23 @@
 
 
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/flash_style.css') }}">
+
     <h1>Product Details!</h1>
     <br>
 
     <h2>{{ product['name'] }}</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
     <img src="{{ url_for('static', filename='images/products/' + product['image']) }}">
 
     {% if product['stock'] > 0 %}

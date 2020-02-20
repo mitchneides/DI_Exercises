@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Login Success! Time to add some shit:</h1>
+	<br>
+
+    <form method="post">
+		{{ form.hidden_tag() }}
+
+		<p>
+		{{ form.name.label }}
+		{{ form.name(class_="red") }}
+		</p>
+		<p>
+		{{ form.price.label }}
+		{{ form.price }}
+		</p>
+        <p>
+		{{ form.amount.label }}
+		{{ form.amount }}
+		</p>
+        <p>
+		{{ form.image.label }}
+		{{ form.image }}
+		</p>
+		<p>
+		{{ form.submit }}
+		</p>
+	</form>
+
+{% endblock %}
