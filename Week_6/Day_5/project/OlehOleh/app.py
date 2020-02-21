@@ -84,6 +84,17 @@ def product(id):
     return render_template('product.html', product=item)
 
 
+@app.route('/buy/<int:id>')
+def buy(id):
+    products = market_db.load_market_db()
+    for thing in products:
+        if thing['id'] == id:
+            thing['qty'] -= 1
+    market_db.update_market_db(products)
+    return redirect(f'/product/{id}')
+
+
+
 @app.route('/my_cart')
 def my_cart():
     check_cart = cart.load_cart()

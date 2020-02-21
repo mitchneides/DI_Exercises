@@ -17,7 +17,10 @@
     </div>
 
     <a class="waves-effect waves-light btn bottom" style="background-color: #e57373" href="/market">Return to market</a>
-    <a class="waves-effect waves-light btn bottom" style="background-color: #e57373">Add to cart</a>
-
+    {% if product['qty'] > 0 %}
+    <a class="waves-effect waves-light btn bottom" style="background-color: #e57373" href="/buy/{{ product['id'] }}">Add to cart</a>
+    {% else %}
+    <a class="waves-effect waves-light btn bottom disabled" style="background-color: #e57373" href="/buy/{{ product['id'] }}">Out of Stock</a>
+    {% endif %}
 
 {% endblock %}
