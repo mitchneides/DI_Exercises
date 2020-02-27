@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<hr>
+<h2>Books</h2>
+<hr>
+    <ul>
+    {% for book in books %}
+        <li>{{ book.title }} by {{ book.author }}</li>
+    {% endfor %}
+    </ul>
+<hr>
+<h2>Authors</h2>
+<hr>
+    <ul>
+    {% for author in authors %}
+        <li><a href={{url_for('author', name=author.name) }}>{{ author.name }}</a></li>
+    {% endfor %}
+    </ul>
+
+<a href={{url_for('addbook')}} class="btn btn-primary">Add a book</a>
+
+{% endblock %}
+
