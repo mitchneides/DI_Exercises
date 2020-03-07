@@ -7,8 +7,6 @@
         <li>
                 Rent Date: {{ rental.rental_date }}<br>
                 Return Date: {{ rental.return_date }}<br>
-                Customer: {{ rental.customer }}<br>
-                Vehicle: {{ rental.vehicle }}<br>
         </li>
     {% endfor %}
 </ul>
@@ -16,7 +14,7 @@
 <ul>
     {% for vehicle in vehicles %}
         <li>
-                Item: {{ vehicle.type }}<br>
+                {{ vehicle }}<br>
         </li>
     {% endfor %}
 </ul>
