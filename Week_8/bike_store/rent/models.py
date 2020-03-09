@@ -10,9 +10,15 @@ class Customer(models.Model):
     city = models.TextField(max_length=60)
     country = models.TextField(max_length=60)
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 class VehicleType(models.Model):
     type = models.TextField(max_length=60)
+
+    def __str__(self):
+        return f'{self.type}'
 
 
 class VehicleSize(models.Model):
@@ -24,6 +30,9 @@ class Vehicle(models.Model):
     date_created = models.DateField(auto_now=False, auto_now_add=False)
     real_cost = models.FloatField()
     size = models.ForeignKey(VehicleSize, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.type}'
 
 
 class Rental(models.Model):
