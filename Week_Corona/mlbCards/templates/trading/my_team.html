@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>MLM - Trade Hub</title>{% endblock %}
+
+{% block sidebar %}
+    <ul class="sidebar-nav">
+      <li><a href="/trading/all_players">All Players</a></li>
+      <li><a href="/trading/free_agents">Free Agents</a></li>
+      <li><a href="/trading/my_team">My Team</a></li>
+      <br>
+      <li><a href="">Available Funds: ${{ team.funds }}</a></li>
+      <li><a href="/trading/trade_offers">Pending Trade Offers: {{ num_block_offers }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+  <h2>Roster: {{ team }}</h2>
+
+  <ul>
+    {% for player in players %}
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1" style="width: 450px;">
+          <div class="card-content white-text">
+            <span class="card-title"><h3 style="margin-top: 0px;">{{ player.full_name }}</h3></span>
+            <p>Position: {{ player.position }}</p>
+            <p>Bats: {{ player.batting_hand }}</p>
+            <p>MLB Team: {{ player.mlb_team }}</p><br>
+
+            <h5><strong>Stats</strong></h5>
+            <p>Batting Avg: {{ player.batting_avg }}</p>
+            <p>Slugging Percentage: {{ player.slg }}</p>
+            <p>On Base Percentage: {{ player.obp }}</p>
+            <p>Homeruns: {{ player.homeruns }}</p>
+            <p>RBI: {{ player.rbis }}</p>
+            <p>Runs: {{ player.runs }}</p>
+            <p>At Bats: {{ player.ab }}</p><br>
+
+            <h5>Price: ${{ player.price }}</h5>
+
+          </div>
+          <div class="card-action">
+            <a href="/trading/quick_sell/{{ player.id }}">Quick Sell</a>
+            <a href="/trading/trade_block/{{ player.id }}">Add to trade block</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>MLM - Login</title>{% endblock %}
+
+{% block content %}
+
+<div class="container w-75 mt-3">
+    <div class="card mx-auto">
+        <div class="card-header h2">Login</div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

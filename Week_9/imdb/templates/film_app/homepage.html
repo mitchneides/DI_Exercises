@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+{% include 'partials/nav_home.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+{% for film in films %}
+    <div class="card mx-auto" style="margin-bottom: 25px;">
+        <div class="card-header h2">{{ film.title }}</div>
+        {% if film.poster %}
+        <img src="{% static 'images/' %}{{film.poster.image.url}}" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+            <p class="card-text">Directed By: {{ film.director }}</p>
+            <p class="card-text">Release Date: {{ film.release_date }}</p>
+            <p class="card-text">Categories: {{ film.categories }}</p>
+            <p class="card-text">Country: {{ film.country }}</p>
+            <p class="card-text">Poster: {{ film.poster }}</p>
+        </div>
+        {% if user.is_superuser %}
+        <div class="card-footer">
+            <a class="btn btn-warning" href="{% url 'editfilm' film.id %}">Edit Film</a>
+            <a class="btn btn-warning" href="{% url 'editdirector' film.director.id %}">Edit Director</a>
+        </div>
+        {% endif %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

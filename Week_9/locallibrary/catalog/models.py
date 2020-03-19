@@ -27,10 +27,10 @@ class Book(models.Model):
     genre = models.ManyToManyField('Genre', help_text='Select a genre for this book')
     language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
-    # def display_genre(self):
-    #     return ', '.join([genre.name for genre in self.genre.all()[:3]])
+    def display_genre(self):
+        return ', '.join([genre.name for genre in self.genre.all()[:3]])
 
-    # display_genre.short_description = 'Genre'
+    display_genre.short_description = 'Genre'
 
     def get_absolute_url(self):
         return reverse('book-detail', args=[str(self.id)])

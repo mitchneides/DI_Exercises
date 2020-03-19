@@ -1,0 +1,12 @@
+get a superscore for eevery teams players to get team rankings
+or based on how many total runs/other stats they have
+
+
+just completed:
+display trade offers - view
+
+for next:
+create accept/decline functionality
+
+    non-accepted offers not being updated to 'rejected'
+    (views - answer_offer
