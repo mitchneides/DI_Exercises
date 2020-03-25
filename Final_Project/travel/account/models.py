@@ -1,7 +1,5 @@
 from django.db import models
 from django.conf import settings
-from django.db.models.signals import post_save
-from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
@@ -15,12 +13,18 @@ class Profile(models.Model):
 
 class Trip(models.Model):
     name = models.CharField(max_length=80, help_text='Name your trip')
-    travelers = models.ManyToManyField('Profile')
-    destinations = models.ManyToManyField('Destination')
+    travelers = models.ManyToManyField('Profile', help_text='Who will be traveling on this journey?')
+    destinations = models.ManyToManyField('Destination', help_text='Ctrl + click to select multiple')
     start_date = models.DateField(blank=True, null=True, help_text='Useful but not required')
     end_date = models.DateField(blank=True, null=True, help_text='Useful but not required')
-    completed = models.BooleanField(default=False)
-    transportation_methods = models.ManyToManyField('Transportation', related_name='Travel_methods', blank=True)
+
+    CHOICES = [
+        ('Done', 'Trip has been completed'),
+        ('Open', 'Trip is ongoing')
+    ]
+    status = models.CharField(choices=CHOICES, default='Open', max_length=4)
+
+    transportation_methods = models.ManyToManyField('Transportation', related_name='Travel_methods', blank=True, help_text='Ctrl + click to select multiple')
 
     def __str__(self):
         return self.name
@@ -43,16 +47,7 @@ class Destination(models.Model):
 
 
 class Transportation(models.Model):
-    CHOICES = [
-        ('A', 'Airplane'),
-        ('Bu', 'Bus'),
-        ('Bi', 'Bike'),
-        ('C', 'Car'),
-        ('H', 'Hike'),
-        ('M', 'Motorcycle'),
-        ('S', 'Ship'),
-        ('T', 'Train'),
-        ('W', 'Walk'),
-    ]
+    transportation_method = models.CharField(max_length=60)
 
-    transportation_method = models.CharField(choices=CHOICES, default='C', max_length=2, help_text='Select any relevant')
+    def __str__(self):
+        return self.transportation_method

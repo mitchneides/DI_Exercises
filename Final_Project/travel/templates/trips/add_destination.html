@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Ramblin' - Add Destination</title>{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container w-75 mt-3">
+    <div class="card mx-auto">
+        <div class="card-header h2">Add Destination</div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -5,6 +5,7 @@
 {% block title %}<title>Ramblin' - Trips</title>{% endblock %}
 
 {% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -14,15 +15,30 @@
       <div class="card" style="width: 65vw;">
         <div class="card-image">
           <img src="{% static 'travel/images/road.jpg' %}" style="height: 60vh; width: 65vw">
-          <span class="card-title">Card Title</span>
+          <span class="card-title">"The highway sets the traveler's stage"</span>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>Everyone has a different definition of travel.<br>Let's find out what yours is.</p><br>
+          <span id="txt1">- View all trips</span><i class="material-icons left activator">description</i>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+
+          <a href="new_trip" class="activator">New Trip</a>
         </div>
+
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4" style="font-size: 68px;">My Trips<i class="material-icons right">close</i></span>
+
+          <ul>
+          {% for trip in trips %}
+            <li style="list-style-type: square; font-size: 32px; margin-left: 9px;">
+              {{ trip.name }}
+            </li><br>
+          {% endfor %}
+          </ul>
+
+        </div>
+
       </div>
     </div>
 </div>

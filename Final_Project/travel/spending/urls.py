@@ -5,7 +5,6 @@ from .views import *
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('new_trip/', views.new_trip, name='new_trip'),
-    path('add_destination/', views.add_destination, name='add_destination'),
+    path('finances/trip_<int:trip_id>', views.finances, name='finances'),
 
 ]

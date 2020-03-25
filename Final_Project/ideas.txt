@@ -58,4 +58,43 @@ jupiter notebooks
 microsoft resources
 mada idea
 
-start making functionality for trips (details)
+
+
+
+
+added models for spending (making a purchase)
+
+to do: add functinality to display purchases/make new purchase
+
+
+
+
+
+
+
+
+
+
+checker notes:
+
+check on weekly basis (once or twice per student)
+update student and excel with notes
+communicate with students through slack - provide some useful feedback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

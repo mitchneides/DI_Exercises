@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Ramblin' - New Trip</title>{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container w-75 mt-3">
+    <div class="card mx-auto">
+        <div class="card-header h2">New Trip</div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ form.name.errors }}
+                    <label for="{{ form.name.id_for_label }}">Trip Name:</label>
+                    {{ form.name }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.travelers.errors }}
+                    <label for="{{ form.travelers.id_for_label }}">Travelers:</label>
+                    {{ form.travelers }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.destinations.errors }}
+                    <label for="{{ form.destinations.id_for_label }}">Destination(s):</label>
+                    {{ form.destinations }}
+                </div>
+                <a href="/trips/add_destination">+ destination</a>
+                <br>
+                <br><div class="fieldWrapper">
+                    {{ form.start_date.errors }}
+                    <label for="{{ form.start_date.id_for_label }}">Start Date:</label>
+                    {{ form.start_date }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.end_date.errors }}
+                    <label for="{{ form.end_date.id_for_label }}">End Date:</label>
+                    {{ form.end_date }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.status.errors }}
+                    <label for="{{ form.status.id_for_label }}">Status:</label>
+                    {{ form.status }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.transportation_methods.errors }}
+                    <label for="{{ form.transportation_methods.id_for_label }}">Transportation Methods:</label>
+                    {{ form.transportation_methods }}
+                </div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Start Trip</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
