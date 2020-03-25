@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from account.forms import SignUpForm, LoginForm
+from account.forms import SignUpForm, LoginForm, CreateTeamForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -68,11 +68,43 @@ def profile(request):
     try:
         team = Team.objects.get(user_id=user_id)
     except:
-        team = "You have not yet drafted your team."
-        context = {'team': team}
+        team = ""
+        players = ["Click 'Create Team' on the left side of the screen to begin.","Once your team has been set up, you can go to Trade Hub / Free Agents to purchase players and begin your dynasty!"]
+        context = {'team': team, 'players': players}
     else:
-        context = {'team': team}
+        players = Player.objects.filter(team_id=team.id)
+        if len(players) == 0:
+            players = ["Go to Trade Hub / Free Agents to purchase players and begin your dynasty!"]
+        context = {'team': team, 'players': players}
 
     return render(request, 'account/profile.html', context=context)
 
+
+@login_required
+def create_team(request):
+
+    if request.method == 'POST':
+        form = CreateTeamForm(request.POST)
+
+        if form.is_valid():
+
+            if Team.objects.filter(name=form.cleaned_data["team_name"]).exists():
+                messages.warning(request, f'{form.cleaned_data["team_name"]} is already a team')
+                return redirect(reverse('signup'))
+
+            Team.objects.create(name=form.cleaned_data["team_name"], user=request.user)
+            messages.success(request, 'Welcome to the league!')
+            return redirect(reverse('profile'))
+
+    else:
+        form = CreateTeamForm()
+
+    return render(request, 'account/create_team.html', {'form': form})
+
+
+def view_competitor(request, team_id):
+    team = Team.objects.get(id=team_id)
+    players = Player.objects.filter(team=team).all()
+    
+    return render(request, 'account/view_competitor.html', context={'players': players, 'team': team})
 

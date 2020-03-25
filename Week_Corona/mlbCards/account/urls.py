@@ -11,4 +11,6 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('create_team/', create_team, name='create_team'),
+    path('<int:team_id>', view_competitor, name='view_competitor'),
 ]

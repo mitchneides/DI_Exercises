@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>MLM - Account Home</title>{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}
+
+{% block content %}
+  <h1>Major League Manager</h1>
+  <h5>Welcome to Major League Manager, a website developed by _/CoronaDays\_!</h5><br>
+  <h3>{{ team }} roster:</h3><br>
+  <ul>
+    {% for player in players %}
+      <li>
+        <a href="http://google.com/#q={{ player.full_name }} mlb" target="_blank"><h5>-{{ player }}</h5></a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+

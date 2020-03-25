@@ -19,3 +19,8 @@ class LoginForm(Form):
         {'class': 'form-control w-75'}))
     password = CharField(max_length=60, required=True, widget=PasswordInput(
         {'class': 'form-control w-75'}))
+
+
+class CreateTeamForm(Form):
+    team_name = CharField(max_length=60, required=True, widget=TextInput(
+        {'class': 'form-control w-75'}))

@@ -2,6 +2,12 @@
 
 {% block title %}<title>MLM - My Profile</title>{% endblock %}
 
+{% block sidebar %}
+<ul class="sidebar-nav">
+  <li><a href="/account/create_team">Create Team</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
 
 <div class="container w-75 mt-3">
@@ -17,9 +23,12 @@
 
 <div class="container w-75 mt-3">
     <div class="card mx-auto">
-        <div class="card-header h2">My Team</div>
+        <div class="card-header h2">{{ team }} roster:</div>
         <div class="card-body">
-            <p class="card-text">{{ team }}</p>
+            {% for player in players %}
+            <p class="card-text">{{ player }}</p>
+            {% endfor %}
+            <a class="btn btn-primary" href="/trading/my_team">Jump to team</a>
         </div>
     </div>
 </div>

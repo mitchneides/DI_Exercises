@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Ramblin' - Home</title>{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="card-image">
+  <img src="{% static 'trips/images/map.jpg' %}" id="map">
+</div>
+
+
+
+<div id="quote" style="text-align: center; margin-top: 55px;">
+  <h4>I've got the wheels to ride and the wheels to run,</h4>
+  <h4>Some say I got ramblin' in my blood</h4>
+  <h4>No pretty girl can slow me down</h4>
+  <h4>I'll travel 'till my country home is found</h4>
+  <h2><em>So I will travel</em></h2>
+</div>
+
+{% endblock %}
+
+

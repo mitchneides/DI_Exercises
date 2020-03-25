@@ -1,0 +1,61 @@
+app to track spending for a trip with friends
+	full on road trip app
+	planning schedule
+		weather api? for packing feature
+	    add itinerary to calendar and share with friends and family	
+		flight api for tracking
+	booking
+	chat/forum - sharing, recommendations(based off of likes), friends
+	budgeting
+		check car/travel apis
+			https://www.fueleconomy.gov/feg/ws/
+		currency converter
+
+	passport/airplane ticket/important document holder
+	friend gps tracking
+	coupons/discounts/advertising
+	eventually add destinations/ideas for what to do at certain places
+		atlas of places/activities
+		input amount of time/money/travel resources/etc and get ideas of things to do
+	eventually add a language learning feature based on where you're going
+	my trip memories feature - makes into collaeuge/pics/all the stuff you did
+		sort of like a diary of what you did on the trip
+			or an automated travel blog
+	news/alerts on weather/travel issues/safety concerns
+		turn on gps to allow friends to keep track of you
+			alert the local authorities button
+	'everyone has a different definition of travel. we aim to be an outlet/resource for every single definition'
+
+	health/medical section (diet/calory tracking, medical records, etc)
+
+avett theme
+	https://www.google.com/search?q=avett+brothers+travel+songs&oq=avett+brothers+travel+songs&aqs=chrome..69i57.6982j0j7&sourceid=chrome&ie=UTF-8
+
+traveling song
+	https://www.google.com/search?q=traveling+song+avett+brothers&oq=traveling+song+avett&aqs=chrome.0.0j46j69i57j0l3.3348j0j7&sourceid=chrome&ie=UTF-8
+
+ramblin man
+	
+
+{
+split wise app - check their functionality
+group users
+
+}
+
+
+
+rosetta stone
+	check apis
+
+
+
+
+numpy
+pandas
+data processing
+jupiter notebooks
+microsoft resources
+mada idea
+
+start making functionality for trips (details)
