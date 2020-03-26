@@ -70,6 +70,10 @@ to do: add functinality to display purchases/make new purchase
 
 
 
+avi: error on form submit + how to reverse back to page after submission
+
+
+
 
 
 

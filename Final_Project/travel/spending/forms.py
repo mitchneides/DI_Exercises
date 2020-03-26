@@ -2,18 +2,18 @@ from django.forms import *
 from .models import *
 
 
-# class LoginForm(Form):
-#     username = CharField(max_length=60, required=True, widget=TimeInput(
-#         {'class': 'form-control w-75'}))
-#     password = CharField(max_length=60, required=True, widget=PasswordInput(
-#         {'class': 'form-control w-75'}))
-#
-#
-# class ProfileModelForm(ModelForm):
-#     class Meta:
-#         model = Profile
-#         fields = ['picture', 'bio']
-#         widgets = {
-#             'bio': Textarea(attrs={'class': 'form-control'}),
-#             'picture': FileInput(attrs={'class': 'form-control'}),
-#         }
+class PurchaseModelForm(ModelForm):
+    class Meta:
+        model = Purchase
+        fields = ['item', 'description', 'category', 'price', 'datetime', 'buyer', 'sharers', 'trip']
+        widgets = {
+            'item': TextInput(attrs={'class': 'form-control'}),
+            'description': TextInput(attrs={'class': 'form-control'}),
+            'category': Select(attrs={'class': 'form-control'}),
+            'price': NumberInput(attrs={'class': 'form-control'}),
+            'datetime': SelectDateWidget(attrs={'class': 'form-control'}),
+            'buyer': Select(attrs={'class': 'form-control'}),
+            'sharers': SelectMultiple(attrs={'class': 'form-control'}),
+            'trip': Select(attrs={'class': 'form-control'}),
+        }
+
