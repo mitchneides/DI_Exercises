@@ -5,13 +5,13 @@
 {% block title %}<title>Ramblin' - Trip Finances</title>{% endblock %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'spending/css/trip_finances.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <ul class="collection with-header" style="width: 75vw; margin: auto; margin-top: 20px;">
-        <li class="collection-header" style="text-align: center;"><h4>{{ trip }} - spending</h4></li>
+        <li class="collection-header" style="text-align: center;"><h4>{{ trip }}<br> <br>Spending History</h4></li>
 
         <table class="highlight">
                 <thead>
@@ -34,7 +34,7 @@
                   <tr>
                     <td>{{ purchase.item }}</td>
                     <td>{{ purchase.description }}</td>
-                    <td>${{ purchase.price }}</td>
+                    <td>${{ purchase.price|floatformat:2 }}</td>
                     <td>@{{ purchase.buyer }}</td>
 
                     <td>
@@ -46,16 +46,44 @@
                     <td>{{ purchase.datetime }}</td>
                     <td>{{ purchase.category }}</td>
                     <td>{{ purchase.id }}</td>
-                    <td><a href="#"><i class="material-icons">edit</i></a></td>
-                    <td><a href="#"><i class="material-icons">delete</i></a></td>
+                    <td><a href="edit_purchase_{{ purchase.id }}_{{ trip.id }}"><i class="material-icons">edit</i></a></td>
+                    <td><a href="delete_purchase_{{ purchase.id }}_{{ trip.id }}"><i class="material-icons">delete</i></a></td>
                   </tr>
                 {% endfor %}
                 </tbody>
         </table>
 
         <li class="collection-footer" style="height: 60px; display: flex; justify-content: space-around; align-items: center;">
-                <a href="add_purchase_{{ trip.id }}" class="waves-effect waves-light btn-small">Add Purchase</a>
+                <a href="add_purchase_{{ trip.id }}"><i class="material-icons" style="font-size: 44px;">add_box</i></a>
         </li>
+
+</ul>
+
+<ul class="collection with-header" style="width: 75vw; margin: auto; margin-top: 60px;">
+        <li class="collection-header" style="text-align: center;"><h4>Debt Tracker</h4></li>
+
+        <table class="highlight">
+                <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Total Amount User Paid</th>
+                      <th>Total Amount User Owes</th>
+                      <th>Outstanding Debts to Pay</th>
+                      <th>Outstanding Money to Receive</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                {% for key, value in records.items %}
+                  <tr>
+                    <td>{{ key }}</td>
+                    <td>${{ value.total_paid|floatformat:2 }}</td>
+                    <td>${{ value.total_debts|floatformat:2 }}</td>
+                    <td id="debt">${{ value.to_pay|floatformat:2 }}</td>
+                    <td id="owed">${{ value.to_receive|floatformat:2 }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
 
 </ul>
 

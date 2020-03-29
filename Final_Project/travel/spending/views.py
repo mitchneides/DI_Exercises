@@ -24,14 +24,43 @@ def finances(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
     purchases = Purchase.objects.filter(trip=trip)
 
-    context = {'trip': trip, 'purchases': purchases}
+    trip_members = trip.travelers.all()
+
+    everyone_purchasing_records = {}
+    for person in trip_members:
+        everyone_purchasing_records[person] = {}
+
+        total_person_payments = 0
+        total_person_debts = 0
+
+        for purchase in purchases:
+            sharers = purchase.sharers.all()
+
+            # sum total money that person has paid for
+            if purchase.buyer == person:
+                total_person_payments += purchase.price
+
+            # sum total share of expenses that user is responsible for
+            if person in sharers:
+                cost_per_sharer = (purchase.price / len(sharers))
+                total_person_debts += cost_per_sharer
+
+        everyone_purchasing_records[person]['total_paid'] = total_person_payments
+        everyone_purchasing_records[person]['total_debts'] = total_person_debts
+        balance = total_person_payments - total_person_debts
+        if balance >= 0:
+            everyone_purchasing_records[person]['to_pay'] = 0
+            everyone_purchasing_records[person]['to_receive'] = balance
+        else:
+            everyone_purchasing_records[person]['to_pay'] = balance * -1
+            everyone_purchasing_records[person]['to_receive'] = 0
+
+    context = {'trip': trip, 'purchases': purchases, 'records': everyone_purchasing_records}
     return render(request, 'spending/trip_finances.html', context)
 
 
 @login_required
 def add_purchase(request, trip_id):
-    current_user = request.user
-    trip = Trip.objects.get(id=trip_id)
 
     if request.method == 'POST':
         form = PurchaseModelForm(request.POST)
@@ -51,3 +80,38 @@ def add_purchase(request, trip_id):
 
 
     return render(request, 'spending/add_purchase.html', {'form': form})
+
+
+@login_required
+def edit_purchase(request, item_id, trip_id):
+    item = Purchase.objects.get(id=item_id)
+
+    if request.method == 'POST':
+        form = PurchaseModelForm(request.POST, request.FILES, instance=item)
+
+        if form.is_valid():
+            purchase = form.save(commit=False)
+            purchase.save()
+
+            for sharer in form.cleaned_data['sharers']:
+                purchase.sharers.add(sharer)
+
+            messages.success(request, "Purchase updated!")
+            return redirect('finances', trip_id)
+
+    else:
+        form = PurchaseModelForm(instance=item)
+
+
+    return render(request, 'spending/edit_purchase.html', {'form': form})
+
+
+@login_required
+def delete_purchase(request, item_id, trip_id):
+    purchase = Purchase.objects.get(id=item_id)
+
+    purchase.delete()
+    messages.success(request, "Purchase deleted")
+
+    return redirect('finances', trip_id)
+

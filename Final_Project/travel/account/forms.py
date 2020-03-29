@@ -30,3 +30,13 @@ class ProfileModelForm(ModelForm):
             'bio': Textarea(attrs={'class': 'form-control'}),
             'picture': FileInput(attrs={'class': 'form-control'}),
         }
+
+
+class JoinTripModelForm(ModelForm):
+    class Meta:
+        model = Trip
+        fields = ['name']
+        TRIP_CHOICES = [(trip.id, trip.name) for trip in Trip.objects.all()]
+        widgets = {
+                'name': SelectMultiple(choices=TRIP_CHOICES, attrs={'class': 'form-control'}),
+        }

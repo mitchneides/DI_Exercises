@@ -3,6 +3,7 @@ from .forms import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from account.models import *
+from account.forms import *
 
 
 @login_required
@@ -34,13 +35,41 @@ def new_trip(request):
                 trip.transportation_methods.add(transportation_method)
 
             messages.success(request, "Trip created! Let's get planning!")
-            return redirect(reverse('profile'))
+            return redirect('/trips/')
 
     else:
         form = TripModelForm()
 
-
     return render(request, 'trips/new_trip.html', {'form': form})
+
+
+@login_required
+def join_trip(request):
+    current_user = request.user
+    user_profile = Profile.objects.get(user=current_user)
+    all_trips = Trip.objects.all()
+
+    if request.method == 'POST':
+        form = JoinTripModelForm(request.POST)
+
+        if form.is_valid():
+            form.save(commit=False)
+
+            for trip in form.cleaned_data['name']:
+                print(trip)
+                if trip.isdigit():
+                    trip_ob = Trip.objects.get(id=trip)
+                    trip_ob.travelers.add(user_profile)
+                    trip_ob.save()
+
+            messages.success(request, "Trip joined!")
+            return redirect('/trips/')
+
+    else:
+        form = JoinTripModelForm()
+        form.fields['name'].choices = [(trip.id, trip.name) for trip in all_trips]
+
+    return render(request, 'trips/join_trip.html', {'form': form})
 
 
 def add_destination(request):

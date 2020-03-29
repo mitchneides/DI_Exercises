@@ -62,15 +62,22 @@ mada idea
 
 
 
-added models for spending (making a purchase)
+added add purchase feature
 
-to do: add functinality to display purchases/make new purchase
-
-
+to do: edit/delete purchase
 
 
 
-avi: error on form submit + how to reverse back to page after submission
+splitting up and displaying costs
+(spending/views.py) - def finances
+
+
+{
+admin {mitch: 15, rob: 20},
+
+}
+
+
 
 
 

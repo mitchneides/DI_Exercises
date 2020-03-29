@@ -2,26 +2,27 @@
 
 {% load static %}
 
-{% block title %}<title>Ramblin' - Add Purchase</title>{% endblock %}
+{% block title %}<title>Ramblin' - Join Trips</title>{% endblock %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'account/css/profile.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <div class="container w-75 mt-3">
     <div class="card mx-auto">
-        <div class="card-header h2">Add Purchase</div>
+        <div class="card-header h2">Join Trips</div>
         <div class="card-body">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
 
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary">Join</button>
             </form>
         </div>
     </div>
 </div>
 
 {% endblock %}
+
