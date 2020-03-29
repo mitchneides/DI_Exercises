@@ -12,7 +12,7 @@ class Profile(models.Model):
 
 
 class Trip(models.Model):
-    name = models.CharField(max_length=80, help_text='Name your trip')
+    name = models.CharField(max_length=80)
     travelers = models.ManyToManyField('Profile', help_text='Who will be traveling on this journey?')
     destinations = models.ManyToManyField('Destination', help_text='Ctrl + click to select multiple')
     start_date = models.DateField(blank=True, null=True, help_text='Useful but not required')

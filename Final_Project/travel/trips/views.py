@@ -56,13 +56,18 @@ def join_trip(request):
             form.save(commit=False)
 
             for trip in form.cleaned_data['name']:
-                print(trip)
                 if trip.isdigit():
-                    trip_ob = Trip.objects.get(id=trip)
-                    trip_ob.travelers.add(user_profile)
-                    trip_ob.save()
 
-            messages.success(request, "Trip joined!")
+                    trip_ob = Trip.objects.get(id=trip)
+
+                    if user_profile in trip_ob.travelers.all():
+                        messages.warning(request, f"You are already in {trip_ob.name}")
+
+                    else:
+                        trip_ob.travelers.add(user_profile)
+                        trip_ob.save()
+                        messages.success(request, "Trip joined!")
+
             return redirect('/trips/')
 
     else:

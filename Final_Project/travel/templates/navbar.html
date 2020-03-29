@@ -16,8 +16,10 @@
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
         <li class="tab"><a href="/account">Home</a></li>
+        {% if user.is_authenticated %}
         <li class="tab"><a href="/trips">Trips</a></li>
         <li class="tab"><a href="/spending">Spending</a></li>
+        {% endif %}
         <li class="tab"><a href="">Forum</a></li>
         {% if user.is_superuser %}
         <li class="tab"><a href="/admin">Admin</a></li>
