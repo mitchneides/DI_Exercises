@@ -9,3 +9,10 @@
 body {
     margin-bottom: 80px;
 }
+
+#analytics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}

@@ -62,24 +62,9 @@ mada idea
 
 
 
-added add purchase feature
+added debt calculator and spending pie chart feature
 
-to do: edit/delete purchase
-
-
-
-splitting up and displaying costs
-(spending/views.py) - def finances
-
-
-{
-admin {mitch: 15, rob: 20},
-
-}
-
-
-
-
+to do: budget planning - api to car, weather etc.
 
 
 

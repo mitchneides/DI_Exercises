@@ -59,6 +59,40 @@ def finances(request, trip_id):
             everyone_purchasing_records[person]['to_receive'] = 0
 
 
+    # purchase_data_by_cat = {}
+    #
+    # # initialize all existing categories
+    # for purchase in purchases:
+    #     purchase_data_by_cat[purchase.category] = {'num_purchases': 0, 'total_spent': 0}
+    #
+    # # count number of occurances/amount spend for each category
+    # for purchase in purchases:
+    #     purchase_data_by_cat[purchase.category]['num_purchases'] += 1
+    #     purchase_data_by_cat[purchase.category]['total_spent'] += purchase.price
+    #
+    #
+    # # graphing:
+    #
+    # categories = [cat.name for cat in purchase_data_by_cat]
+    # amt_spent = [purchase_data_by_cat[cat]['total_spent'] for cat in purchase_data_by_cat]
+    #
+    # fig1, ax1 = plt.subplots()
+    # ax1.pie(amt_spent, labels=categories, autopct='%1.1f%%',
+    #         shadow=True, startangle=90)
+    # ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    #
+    # plt.show()
+
+
+    context = {'trip': trip, 'purchases': purchases, 'records': everyone_purchasing_records}
+    return render(request, 'spending/trip_finances.html', context)
+
+
+@login_required
+def analytics(request, trip_id):
+    trip = Trip.objects.get(id=trip_id)
+    purchases = Purchase.objects.filter(trip=trip)
+
     purchase_data_by_cat = {}
 
     # initialize all existing categories
@@ -69,7 +103,6 @@ def finances(request, trip_id):
     for purchase in purchases:
         purchase_data_by_cat[purchase.category]['num_purchases'] += 1
         purchase_data_by_cat[purchase.category]['total_spent'] += purchase.price
-
 
     # graphing:
 
@@ -83,9 +116,7 @@ def finances(request, trip_id):
 
     plt.show()
 
-
-    context = {'trip': trip, 'purchases': purchases, 'records': everyone_purchasing_records}
-    return render(request, 'spending/trip_finances.html', context)
+    return redirect('finances', trip_id)
 
 
 @login_required
