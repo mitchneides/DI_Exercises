@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from account.models import *
 from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.shortcuts import render
 
 
 @login_required
@@ -15,7 +17,11 @@ def itin(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
     day_plans = DayPlan.objects.filter(trip=trip_id).order_by('date').all()
 
-    context = {'user': current_user, 'trip': trip, 'dayplans': day_plans}
+    paginator = Paginator(day_plans, 4)  # Show 4 dayplans per page.
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.page(page_number)
+
+    context = {'user': current_user, 'trip': trip, 'dayplans': page_obj, 'page_obj': page_obj}
     return render(request, 'itinerary/itin.html', context)
 
 

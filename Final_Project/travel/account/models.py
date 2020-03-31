@@ -37,11 +37,11 @@ class Destination(models.Model):
 
     def __str__(self):
         if self.city and self.state:
-            return f"{self.city}/{self.state}/{self.country}"
+            return f"{self.city}, {self.state}, {self.country}"
         elif self.city:
-            return f"{self.city}/{self.country}"
+            return f"{self.city}, {self.country}"
         elif self.state:
-            return f"{self.state}/{self.country}"
+            return f"{self.state}, {self.country}"
         else:
             return self.country
 

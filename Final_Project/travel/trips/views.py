@@ -48,7 +48,6 @@ def join_trip(request):
     current_user = request.user
     user_profile = Profile.objects.get(user=current_user)
     all_trips = Trip.objects.all()
-    print(all_trips)
 
     if request.method == 'POST':
         form = JoinTripModelForm(request.POST)
@@ -77,8 +76,9 @@ def join_trip(request):
 
     else:
         form = JoinTripModelForm()
-        form.fields['name'].choices = [(trip.id, trip.name) for trip in all_trips]
-        # print([(trip.id, trip.name) for trip in all_trips])
+        print(form.fields)
+        for field in form.fields:
+            print(field)
 
     return render(request, 'trips/join_trip.html', {'form': form})
 

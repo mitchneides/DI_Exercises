@@ -23,7 +23,7 @@ class DayPlan(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length=80)
     company = models.CharField(max_length=80)
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(blank=True, help_text="(format: +12125552368)")
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
 
     def __str__(self):

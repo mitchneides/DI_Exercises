@@ -40,3 +40,9 @@ class JoinTripModelForm(ModelForm):
         widgets = {
                 'name': SelectMultiple(choices=TRIP_CHOICES, attrs={'class': 'form-control'}),
         }
+
+
+
+
+
+

@@ -10,6 +10,10 @@
 
 {% block content %}
 
+
+<h1 style="display: flex; justify-content: center">Itinerary</h1>
+<h4 style="display: flex; justify-content: center; margin-bottom: 40px;">{{ trip }}</h4>
+
 {% for dayplan in dayplans %}
 <ul class="collection with-header" style="width: 35vw; margin: auto; margin-top: 20px; box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);">
         <li class="collection-header"><h4>{{ dayplan.date }}</h4><h5 style="margin-left: 15px;">"{{ dayplan }}"</h5></li>
@@ -36,7 +40,12 @@
                 <div><h5>Contacts:</h5>
                     <ul>
                         {% for contact in dayplan.contacts.all %}
-                        <li style="margin-left: 9px;">- {{ contact }}</li>
+                        <li style="margin-left: 9px;">
+                            <strong>{{ contact.name }}</strong><br>
+                            Company: {{ contact.company }}<br>
+                            Phone: {{ contact.phone_number }}
+                        </li>
+                        <br>
                         {% endfor %}
                     </ul>
                 </div>
