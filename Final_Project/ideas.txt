@@ -64,7 +64,45 @@ mada idea
 
 added debt calculator and spending pie chart feature
 
-to do: budget planning - api to car, weather etc.
+to do: FIX ORDER FOR DAY PLAN FORM, then do formatting for itinerary
+
+
+TRANSPORTATION METHODS NOT SHOWING UP, PROBLEM SEEN BY PRINT STATEMENT IN VIEWS
+
+
+
+
+
+-itinerary app (divs for each day, where to go, what to do, diary feature)
+
+-budget planning - api to car, weather etc.
+
+-analytics: go to new page that splits breakdowns by category
+
+-figure out graphing with:
+bokeh or plotly
+
+
+
+yair?: join existing trip takes a while to show up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -78,6 +116,11 @@ update student and excel with notes
 communicate with students through slack - provide some useful feedback
 
 
+
+
+DI 101
+
+https://app.tepez.co.il/e/5e82245c938ed922232b3e0c/?b=X1wxNjQ4NjU5MjkyXFg5VUZjSlk1bzJ6dVNlLzYxVGFXcytDT2hTTGc4azdublBaczJaSjBOMEk9XA
 
 
 

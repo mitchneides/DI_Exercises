@@ -58,7 +58,8 @@ def finances(request, trip_id):
             everyone_purchasing_records[person]['to_pay'] = balance * -1
             everyone_purchasing_records[person]['to_receive'] = 0
 
-
+    # # graphing(moved to analytics, below):
+    #
     # purchase_data_by_cat = {}
     #
     # # initialize all existing categories
@@ -70,8 +71,6 @@ def finances(request, trip_id):
     #     purchase_data_by_cat[purchase.category]['num_purchases'] += 1
     #     purchase_data_by_cat[purchase.category]['total_spent'] += purchase.price
     #
-    #
-    # # graphing:
     #
     # categories = [cat.name for cat in purchase_data_by_cat]
     # amt_spent = [purchase_data_by_cat[cat]['total_spent'] for cat in purchase_data_by_cat]
@@ -117,6 +116,22 @@ def analytics(request, trip_id):
     plt.show()
 
     return redirect('finances', trip_id)
+
+    # django graphing (not working):
+
+    # xdata = categories
+    # ydata = amt_spent
+    #
+    # extra_serie = {"tooltip": {"y_start": "", "y_end": " cal"}}
+    # chartdata = {'x': xdata, 'y1': ydata, 'extra1': extra_serie}
+    # charttype = "pieChart"
+    #
+    # data = {
+    #     'charttype': charttype,
+    #     'chartdata': chartdata,
+    # }
+
+    # return render(request, 'spending/analytics.html', context=data)
 
 
 @login_required

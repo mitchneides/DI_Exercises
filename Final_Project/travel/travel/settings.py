@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'account',
     'trips',
     'spending',
+    'itinerary',
+    'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

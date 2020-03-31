@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Ramblin' - Itinerary</title>{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% for dayplan in dayplans %}
+<ul class="collection with-header" style="width: 35vw; margin: auto; margin-top: 20px; box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);">
+        <li class="collection-header"><h4>{{ dayplan.date }}</h4><h5 style="margin-left: 15px;">"{{ dayplan }}"</h5></li>
+        <ul>
+            <li class="collection-item">
+                <div><h5>Destinations:</h5>
+                    <ul>
+                        {% for destination in dayplan.destinations.all %}
+                        <li style="margin-left: 9px;">- {{ destination }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div><h5>Requirements:</h5>
+                    <ul>
+                        <li style="margin-left: 9px;">- {{ dayplan.requirements }}</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div><h5>Contacts:</h5>
+                    <ul>
+                        {% for contact in dayplan.contacts.all %}
+                        <li style="margin-left: 9px;">- {{ contact }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div><h5>Transportation Methods:</h5>
+                    <ul>
+                        {% for method in dayplan.transportation_methods.all %}
+                        <li style="margin-left: 9px;">- {{ method }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div><h5>Journal Entry:</h5>
+                    <ul>
+                        <li style="margin-left: 9px;">- {{ dayplan.journal }}</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <div class="edit_delete" style="display: flex; justify-content: center">
+            <a href="/itinerary/edit_dayplan_{{ trip.id }}_{{ dayplan.id }}"><i style="margin-right: 10px;" class="material-icons small">edit</i></a>
+            <a href="/itinerary/delete_dayplan_{{ trip.id }}_{{ dayplan.id }}"><i style="margin-left: 10px;" class="material-icons small">delete</i></a>
+        </div>
+
+
+</ul>
+{% endfor %}
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large green" href="/itinerary/add_dayplan/trip_{{ trip.id }}">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+
+{% endblock %}

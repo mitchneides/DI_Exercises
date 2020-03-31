@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Ramblin' - Add Day Plan</title>{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container w-75 mt-3">
+    <div class="card mx-auto">
+        <div class="card-header h2">Add Day Plan</div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ form.destinations.errors }}
+                    <label for="{{ form.destinations.id_for_label }}">Destination(s):</label>
+                    {{ form.destinations }}
+                </div>
+                <a href="/itinerary/add_day_destination_{{ trip.id }}">+ destination</a>
+                <br>
+                <br><div class="fieldWrapper">
+                    {{ form.contacts.errors }}
+                    <label for="{{ form.contacts.id_for_label }}">Contacts (Ex: Tour Guide, Emergency Contacts, etc.):</label>
+                    {{ form.contacts }}
+                </div>
+                <a href="/itinerary/add_contact_{{ trip.id }}">+ contact</a>
+                <br>
+                <br><div class="fieldWrapper">
+                    {{ form.date.errors }}
+                    <label for="{{ form.date.id_for_label }}">Day:</label>
+                    {{ form.date }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.name.errors }}
+                    <label for="{{ form.name.id_for_label }}">Name (Give a name to remember what was/will be done on this day):</label>
+                    {{ form.name }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.requirements.errors }}
+                    <label for="{{ form.requirements.id_for_label }}">Requirements (Anything you may need to bring):</label>
+                    {{ form.requirements }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.transportation_methods.errors }}
+                    <label for="{{ form.transportation_methods.id_for_label }}">Transportation Methods:</label>
+                    {{ form.transportation_methods }}
+                </div>
+                <br>
+                <div class="fieldWrapper">
+                    {{ form.journal.errors }}
+                    <label for="{{ form.journal.id_for_label }}">Journal Entry (To be completed after - write any notes/memories from this day):</label>
+                    {{ form.journal }}
+                </div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

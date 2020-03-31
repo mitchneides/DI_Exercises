@@ -48,6 +48,7 @@ def join_trip(request):
     current_user = request.user
     user_profile = Profile.objects.get(user=current_user)
     all_trips = Trip.objects.all()
+    print(all_trips)
 
     if request.method == 'POST':
         form = JoinTripModelForm(request.POST)
@@ -55,24 +56,29 @@ def join_trip(request):
         if form.is_valid():
             form.save(commit=False)
 
+            trip_id_str = ""
             for trip in form.cleaned_data['name']:
                 if trip.isdigit():
+                    trip_id_str = trip_id_str + trip
 
-                    trip_ob = Trip.objects.get(id=trip)
+            trip_id_int = int(trip_id_str)
 
-                    if user_profile in trip_ob.travelers.all():
-                        messages.warning(request, f"You are already in {trip_ob.name}")
+            trip_ob = Trip.objects.get(id=trip_id_int)
 
-                    else:
-                        trip_ob.travelers.add(user_profile)
-                        trip_ob.save()
-                        messages.success(request, "Trip joined!")
+            if user_profile in trip_ob.travelers.all():
+                messages.warning(request, f"You are already in {trip_ob.name}")
+
+            else:
+                trip_ob.travelers.add(user_profile)
+                trip_ob.save()
+                messages.success(request, "Trip joined!")
 
             return redirect('/trips/')
 
     else:
         form = JoinTripModelForm()
         form.fields['name'].choices = [(trip.id, trip.name) for trip in all_trips]
+        # print([(trip.id, trip.name) for trip in all_trips])
 
     return render(request, 'trips/join_trip.html', {'form': form})
 

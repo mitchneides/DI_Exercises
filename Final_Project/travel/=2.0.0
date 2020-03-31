@@ -1,0 +1,10 @@
+Collecting django-phonenumber-field
+  Downloading https://files.pythonhosted.org/packages/1f/2d/330ae13ceef7d9b083aa61b82779daec6afe4d66ae88adf968adcc6b752c/django_phonenumber_field-4.0.0-py3-none-any.whl (51kB)
+Requirement already satisfied: Django>=1.11.3 in /home/mitch/Documents/environments/travel/lib/python3.6/site-packages (from django-phonenumber-field)
+Collecting babel (from django-phonenumber-field)
+  Downloading https://files.pythonhosted.org/packages/15/a1/522dccd23e5d2e47aed4b6a16795b8213e3272c7506e625f2425ad025a19/Babel-2.8.0-py2.py3-none-any.whl (8.6MB)
+Requirement already satisfied: sqlparse>=0.2.2 in /home/mitch/Documents/environments/travel/lib/python3.6/site-packages (from Django>=1.11.3->django-phonenumber-field)
+Requirement already satisfied: asgiref~=3.2 in /home/mitch/Documents/environments/travel/lib/python3.6/site-packages (from Django>=1.11.3->django-phonenumber-field)
+Requirement already satisfied: pytz in /home/mitch/Documents/environments/travel/lib/python3.6/site-packages (from Django>=1.11.3->django-phonenumber-field)
+Installing collected packages: babel, django-phonenumber-field
+Successfully installed babel-2.8.0 django-phonenumber-field-4.0.0
