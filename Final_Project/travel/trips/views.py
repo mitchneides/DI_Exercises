@@ -83,6 +83,18 @@ def join_trip(request):
     return render(request, 'trips/join_trip.html', {'form': form})
 
 
+@login_required
+def leave_trip(request, trip_id):
+    current_user = request.user
+    user_profile = Profile.objects.get(user_id=current_user)
+    trip = Trip.objects.get(id=trip_id)
+
+    trip.travelers.remove(user_profile)
+
+    messages.success(request, "Trip removed")
+    return redirect('/trips')
+
+
 def add_destination(request):
     if request.method == 'POST':
         form = DestinationModelForm(request.POST)
@@ -99,5 +111,6 @@ def add_destination(request):
 
 
     return render(request, 'trips/add_destination.html', {'form': form})
+
 
 

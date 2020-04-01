@@ -62,18 +62,12 @@ mada idea
 
 
 
-added debt calculator and spending pie chart feature
-
-to do: FIX ORDER FOR DAY PLAN FORM, then do formatting for itinerary
-
-
-TRANSPORTATION METHODS NOT SHOWING UP, PROBLEM SEEN BY PRINT STATEMENT IN VIEWS
 
 
 
 
 
--itinerary app (divs for each day, where to go, what to do, diary feature)
+
 
 -budget planning - api to car, weather etc.
 
@@ -84,14 +78,12 @@ bokeh or plotly
 
 
 
-yair?: join existing trip takes a while to show up
 
 
-
-
-
-
-
+fig = go.Figure(data=[
+    go.Bar(name='Food', x=date, y=[20, 14, 23]),
+    go.Bar(name='Transportation', x=date, y=[12, 18, 29])
+])
 
 
 

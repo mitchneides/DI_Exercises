@@ -37,19 +37,10 @@
 
           <ul>
             {% for trip in trips %}
-
-
-
-
               <li style="display: flex; align-items: center;" class="collection-item">
                 <a href="/itinerary/trip_{{ trip.id }}"><h5>- {{ trip.name }}</h5></a>
-                <a href="/itinerary/delete_dayplan_{{ trip.id }}_{{ dayplan.id }}"><i style="margin-left: 10px;" class="material-icons small">delete</i></a>
+                <a href="/trips/leave_trip_{{ trip.id }}"><i style="margin-left: 30px; margin-top: 15px;" class="material-icons small">delete</i></a><br>
               </li>
-
-
-
-
-
             {% endfor %}
           </ul>
 
