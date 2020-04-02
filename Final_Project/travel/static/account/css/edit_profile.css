@@ -9,15 +9,11 @@ body {
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
-#card {
-  height: 800px;
 
-}
 
 .card-header {
   overflow: hidden;
   width: 100%;
-  height: 550px;
 }
 
 .card-header img{
@@ -27,7 +23,7 @@ body {
 .card-content {
   width: 85%;
   margin: 35px auto;
-  height: 425px;
+  height: 500px;
 }
 
 .card-content h3 {

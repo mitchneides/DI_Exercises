@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Add additional CSS in static file -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&display=swap" rel="stylesheet">
+
 
     {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'travel/css/base_style.css' %}">
@@ -19,7 +21,20 @@
 
 </head>
 
-<body>
+<body class="img-fluid" style="background-image: url('{% static 'travel/images/road.jpg' %}">
+<style>
+    .img-fluid{
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-opacity: .5;
+}
+.alert {
+    margin: 15px 500px;
+    text-align: center;
+}
+</style>
+
 {% include "navbar.html" %}
 {% include 'messages.html' %}
 
@@ -28,7 +43,7 @@
 
     {% block pagination %}
       {% if page_obj %}
-          <div style="justify-content: center; margin-top: 40px;" class="pagination">
+          <div style="justify-content: center; margin-top: 40px; color: white;" class="pagination">
               <span class="page-links">
                   {% if page_obj.has_previous %}
                       <a style="font-size: 24px;" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous - </a>

@@ -9,11 +9,11 @@
 {% endblock %}
 
 {% block content %}
-
+<div>
 <ul class="collection with-header" style="width: 75vw; margin: auto; margin-top: 20px; box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);">
         <li class="collection-header" style="text-align: center;"><h4>{{ trip }}<br> <br>Spending History</h4></li>
 
-        <table class="highlight">
+        <table class="highlight" style="background-color: white;">
                 <thead>
                   <tr>
                       <th>Item</th>
@@ -53,17 +53,19 @@
                 </tbody>
         </table>
 
-        <li class="collection-footer" style="height: 60px; display: flex; justify-content: space-around; align-items: center;">
-                <a href="add_purchase_{{ trip.id }}"><i class="material-icons" style="font-size: 44px;">add_box</i></a>
+        <li class="collection-footer" style="height: 60px; display: flex; justify-content: space-around; align-items: center; background-color: white;">
+                <a href="add_purchase_{{ trip.id }}"><i class="material-icons" style="font-size: 44px; background-color: none;">add_box</i></a>
         </li>
 
 </ul>
 
-<div id="analytics">
-    <a href="/spending/finances/analytics_{{ trip.id }}" class="waves-effect waves-light btn">Analytics</a>
 </div>
 
-<ul class="collection with-header" style="width: 75vw; margin: auto; margin-top: 60px; box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);">
+<div id="analytics">
+    <a href="/spending/finances/analytics_{{ trip.id }}" class="waves-effect waves-light btn">Trip Analytics</a>
+</div>
+
+<ul class="collection with-header" style="width: 75vw; margin: auto; margin-top: 60px; padding-left: 15px; padding-right: 15px; box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75); background-color: white;">
         <li class="collection-header" style="text-align: center;"><h4>Debt Tracker</h4></li>
 
         <table class="highlight">
@@ -92,3 +94,4 @@
 </ul>
 
 {% endblock %}
+finances/traveler_analytics_<int:trip_id>_<int:traveler_id>
