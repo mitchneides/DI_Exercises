@@ -10,5 +10,7 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('profile/', profile, name='profile'),
     path('profile/edit_profile', edit_profile, name='edit_profile'),
+    path('profile/add_docs', add_docs, name='add_docs'),
+    path('profile/delete_doc_<int:doc_id>', delete_doc, name='delete_doc'),
 
 ]

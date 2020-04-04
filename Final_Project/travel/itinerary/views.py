@@ -17,7 +17,7 @@ def itin(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
     day_plans = DayPlan.objects.filter(trip=trip_id).order_by('date').all()
 
-    paginator = Paginator(day_plans, 4)  # Show 4 dayplans per page.
+    paginator = Paginator(day_plans, 6)  # Show 6 dayplans per page.
     page_number = request.GET.get('page', 1)
     page_obj = paginator.page(page_number)
 

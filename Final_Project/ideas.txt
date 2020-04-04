@@ -109,10 +109,15 @@ https://app.tepez.co.il/e/5e82245c938ed922232b3e0c/?b=X1wxNjQ4NjU5MjkyXFg5VUZjSl
 
 
 
+HTML/CSS course:
 
+Tuesday - 2pm
 
+explain to beginners basics of html and css
 
+how an html page is formatted
 
+-basics tags
 
 
 

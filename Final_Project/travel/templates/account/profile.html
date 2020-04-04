@@ -17,7 +17,19 @@
   <div class="card-content" style="margin-top: 20px;">
     <h3>{{ user.first_name }} {{ user.last_name }}</h3>
     <h4>{{ user.email }}</h4><br>
-    <p><em>{{ info.bio }}</em></p>
+    <p style="font-size: 22px;"><em>{{ info.bio }}</em></p><br>
+    <br><h4>Travel Documents:</h4>
+    {% if docs %}
+    <ul>
+      {% for doc in docs %}
+      <li style="list-style-type: circle; margin-left: 30px;"><a href="{{ doc.image.url }}" target="_blank">{{ doc.name }}</a><a href="/account/profile/delete_doc_{{ doc.id }}" style="margin-left: 15px;"><i class="material-icons">delete</i></a></li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>You have not yet uploaded any Travel Documents.</p>
+    {% endif %}
+    <a class="waves-effect waves-light btn-small" style="margin-top: 16px;" href="add_docs"><i class="material-icons left">cloud</i>Add Travel Documents</a>
+    <h6>Click to upload important documents,<br>such as <strong>passports</strong>, <strong>tickets</strong>, <strong>health records</strong>, etc.</h6>
   </div>
   <div class="card-footer">
     <ul>

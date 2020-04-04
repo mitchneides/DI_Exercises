@@ -42,6 +42,16 @@ class JoinTripModelForm(ModelForm):
         }
 
 
+class DocumentModelForm(ModelForm):
+    class Meta:
+        model = Document
+        fields = ['name', 'image', 'profile']
+        PROFILE_CHOICES = [profile for profile in Profile.objects.all()]
+        widgets = {
+            'name': TextInput(attrs={'class': 'form-control'}),
+            'image': FileInput(attrs={'class': 'form-control'}),
+            'profile': Select(attrs={'class': 'form-control'}),
+        }
 
 
 

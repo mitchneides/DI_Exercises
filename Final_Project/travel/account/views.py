@@ -67,8 +67,9 @@ def logout_user(request):
 def profile(request):
     current_user = request.user
     profile_info = Profile.objects.get(user=current_user)
+    docs = Document.objects.filter(profile=profile_info).all()
 
-    context = {'user': current_user, 'info': profile_info}
+    context = {'user': current_user, 'info': profile_info, 'docs': docs}
 
     return render(request, 'account/profile.html', context=context)
 
@@ -93,9 +94,34 @@ def edit_profile(request):
     return render(request, 'account/edit_profile.html', {'form': form})
 
 
+@login_required
+def add_docs(request):
+    current_user = request.user
+    user_profile = Profile.objects.get(user=current_user)
+
+    if request.method == 'POST':
+        # instance=user_profile -> points to the existing object
+        form = DocumentModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Document successfully added!')
+            return redirect(reverse('profile'))
+
+    else:
+        form = DocumentModelForm()
+
+    return render(request, 'account/add_docs.html', {'form': form})
 
 
+@login_required
+def delete_doc(request, doc_id):
+    doc = Document.objects.get(id=doc_id)
 
+    doc.profile_id = None
+    doc.save()
+
+    return redirect(reverse('profile'))
 
 
 

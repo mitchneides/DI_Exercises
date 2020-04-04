@@ -51,3 +51,9 @@ class Transportation(models.Model):
 
     def __str__(self):
         return self.transportation_method
+
+
+class Document(models.Model):
+    name = models.CharField(max_length=80, help_text='Name/type of document')
+    image = models.ImageField(blank=True, null=True, upload_to="account", help_text='Upload an image/screenshot of your document')
+    profile = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
