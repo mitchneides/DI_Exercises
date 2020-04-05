@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}<title>Ramblin' - Home</title>{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row" style="width: 60vw; margin-top: 25px;">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><h1>Coming soon to the site:</h1></span>
+          <ul>
+            <li><h3>-Forum/chat for communicating between trip members and other users, sharing trip ideas, etc.</h3></li>
+            <li><h3>-Schedule planner, including weather/car APIs for accurate route planning and packing tips</h3></li>
+            <li><h3>-Flight tracking</h3></li>
+            <li><h3>-Budget estimator with currency converter and price alerts</h3></li>
+            <li><h3>-Trip suggestions based on money/time/resources available</h3></li>
+            <li><h3>-Language learning feature</h3></li>
+            <li><h3>-Trip memories - creates a collage from the photos you took and journal entries from the itinerary section</h3></li>
+            <li><h3>-News/warnings/alerts for weather or safety concerns</h3></li>
+            <li><h3>-Health/medical section, including info on nearest hospitals and emergency response protocols</h3></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+

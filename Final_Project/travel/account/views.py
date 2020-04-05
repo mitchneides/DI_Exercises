@@ -124,5 +124,7 @@ def delete_doc(request, doc_id):
     return redirect(reverse('profile'))
 
 
-
+def site_plans(request):
+    # temporary page to display upcoming features
+    return render(request, 'account/site_plans.html')
 

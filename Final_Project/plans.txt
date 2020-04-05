@@ -1,0 +1,36 @@
+
+	planning schedule
+		weather api for packing feature
+	    add itinerary to calendar and share with friends and family	
+		flight api for tracking
+	booking section
+
+	chat/forum - sharing, recommendations(based off of likes), friends
+		add destinations/ideas for what to do at certain places
+		atlas of places/activities
+
+	budgeting
+		car/travel api
+			https://www.fueleconomy.gov/feg/ws/
+		currency converter
+		input amount of time/money/travel resources/etc and get ideas of things to do
+
+	   coupons/discounts/advertising
+
+	friend gps tracking
+
+	language learning feature based on where you're going
+		learn 100 most useful words
+
+	my trip memories feature - makes into collaeuge/pics/all the stuff you did
+		automated travel blog
+
+	news/alerts on weather/travel issues/safety concerns
+		turn on gps to allow friends to keep track of you
+			alert the local authorities button
+
+	health/medical section (diet/calory tracking, medical records, etc)
+
+
+
+
