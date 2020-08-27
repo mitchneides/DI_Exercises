@@ -62,3 +62,30 @@ print(html)
 file = open("mycv.html", 'w')
 file.write(html) 
 file.close()
+
+
+
+
+
+
+from random import shuffle
+
+user_str = input("Enter a string (length must be 10): ")
+
+while len(user_str) != 10:
+	user_str = input("\nError: String length MUST be 10...\nEnter a string (length must be 10): ")
+
+print(f"\nFirst character: {user_str[0]}\nLast character: {user_str[-1]}")
+
+for c, item in enumerate(user_str):
+	print(user_str[0:c])
+
+
+def shuffle_str(any_str):
+	jumbled = list(any_str)
+	shuffle(jumbled)
+	return ''.join(jumbled)
+
+
+jumbled_str = shuffle_str(user_str)
+print(f"\nJumbled string: {jumbled_str}")

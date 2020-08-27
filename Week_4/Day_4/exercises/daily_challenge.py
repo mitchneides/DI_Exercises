@@ -1,30 +1,61 @@
-# matrix = '''
-# 7 3
-# Tsi
-# h%x
-# i #
-# sM
-# $a
-# #t%
-# ir!
-# '''
-#
-# l = list(matrix)
-#
-#
-# # print(l)
-# # how_many_cols = 1
-# # while list[0] != list[how_many_cols]:
-# #     how_many_cols += 1
-# #
-# # print(how_many_cols)
-# #
-# # num_of_rows = l.count('\n')
-# # print(num_of_rows)
-# # print(len(l))
+# hw checking help:
+# the_matrix = [
+#     [7, " ", 3],
+#     ["T", "s", "i"],
+#     ["h", "%", "x"],
+#     ["i", " ", "#"],
+#     ["s", "M", " "],
+#     ["$", "a", " "],
+#     ["#", "t", "%"],
+#     ["i", "r", "!"],
+# ]
 #
 #
+# def crypt(matrix):
+#     matrix_as_list = []
+#     counter = 0
+#     while counter < 3:
+#         for row in matrix:
+#             matrix_as_list.append(row[counter])
+#         counter += 1
 #
+#     print(matrix_as_list)
+#
+#
+# crypt(the_matrix)
+
+
+
+
+
+
+matrix = '''
+7 3
+Tsi
+h%x
+i #
+sM
+$a
+#t%
+ir!
+'''
+
+l = list(matrix)
+
+
+print(l)
+how_many_cols = 1
+while list[0] != list[how_many_cols]:
+    how_many_cols += 1
+
+print(how_many_cols)
+
+num_of_rows = l.count('\n')
+print(num_of_rows)
+print(len(l))
+
+
+
 # for thing in l:
 #     if thing == '\n':
 #         l.remove(thing)
@@ -39,8 +70,8 @@
 #             column.append(l[thing])
 #         if l[thing] == '$' or l[thing] == '#' or l[thing] == '%':
 #             column.append(' ')
-#
-#
+
+
 # add_to_temp_lists(0,col1)
 # add_to_temp_lists(1,col2)
 # add_to_temp_lists(2,col3)
@@ -65,19 +96,19 @@
 
 
 
-import random
-
-list_of_numbers = [random.randint(0, 10000) for _ in range(20000)]
-target_number = 3728
-
-half_target = target_number // 2
-correct_nums = []
-for num in range(half_target,target_number):
-    if num in list_of_numbers:
-        correct_nums.append(num)
-
-pairs = [(target_number-num, num) for num in correct_nums]
-
-print(pairs)
-print(len(pairs))
-
+# import random
+#
+# list_of_numbers = [random.randint(0, 10000) for _ in range(20000)]
+# target_number = 3728
+#
+# half_target = target_number // 2
+# correct_nums = []
+# for num in range(half_target,target_number):
+#     if num in list_of_numbers:
+#         correct_nums.append(num)
+#
+# pairs = [(target_number-num, num) for num in correct_nums]
+#
+# print(pairs)
+# print(len(pairs))
+#
